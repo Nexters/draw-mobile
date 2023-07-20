@@ -12,14 +12,17 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
-        <WebView
-            android:id="@+id/wb_draw"
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/nav_host_fragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            app:defaultNavHost="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:navGraph="@navigation/nav_graph" />
 
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -28,8 +31,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:background="@android:color/transparent"
+            android:theme="@style/Widget.BottomNavigationView.Text"
             app:itemBackground="@android:color/transparent"
             app:itemIconTint="@color/bottom_item_color"
+            app:itemTextColor="@color/bottom_item_color"
             app:menu="@menu/menu_bottom" />
 
         <com.google.android.material.bottomappbar.BottomAppBar
@@ -37,25 +42,27 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
+            app:elevation="0dp"
             app:fabAlignmentMode="center"
             app:fabAnchorMode="cradle"
             app:fabCradleMargin="16dp"
-            app:hideOnScroll="false"
-            app:elevation="0dp"
-            app:fabCradleRoundedCornerRadius="60dp"
+            app:fabCradleRoundedCornerRadius="50dp"
             app:fabCradleVerticalOffset="10dp"
+            app:hideOnScroll="false"
             app:removeEmbeddedFabElevation="true" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/ftn_feed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="#4CAF50"
+            android:backgroundTint="@color/sub_green"
             android:clickable="true"
             android:focusable="true"
-            android:src="@drawable/ic_feed"
+            android:src="@drawable/ic_union"
             app:borderWidth="0dp"
             app:layout_anchor="@id/bottom_app_bar"
+            app:maxImageSize="14dp"
+            app:rippleColor="@android:color/transparent"
             app:tint="@android:color/white" />
 
 

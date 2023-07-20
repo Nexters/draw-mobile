@@ -1,15 +1,11 @@
 package org.nexters.draw
 
-import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebChromeClient
-import android.webkit.WebResourceRequest
-import android.webkit.WebView
-import android.webkit.WebViewClient
+import androidx.fragment.app.Fragment
 import org.nexters.draw.databinding.FragmentFeedBinding
 
 
@@ -21,9 +17,9 @@ class FeedFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
-        _binding = FragmentFeedBinding.inflate(inflater,container,false)
+        _binding = FragmentFeedBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -32,30 +28,12 @@ class FeedFragment : Fragment() {
 
         binding.wbDraw.apply {
             webChromeClient = WebChromeClient()
-            webViewClient = object : WebViewClient() {
-                override fun shouldOverrideUrlLoading(
-                    view: WebView?,
-                    request: WebResourceRequest?
-                ): Boolean {
-                    val url = request?.url.toString()
-                    if (url == ONBOARDING_URL) {
-
-                    }
-
-
-                    return false
-                }
-            }
-
+            webViewClient = DrawWebViewClient()
             settings.javaScriptEnabled = true
             settings.domStorageEnabled = true
             settings.setSupportMultipleWindows(true)
             loadUrl("https://inthiswork.com/archives/61366")
         }
-    }
-
-    companion object {
-        const val ONBOARDING_URL = "https://draw-nexters.netlify.app"
     }
 
 }
