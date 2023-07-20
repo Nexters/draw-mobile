@@ -12,17 +12,14 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/nav_host_fragment_activity_main"
-            android:name="androidx.navigation.fragment.NavHostFragment"
+        <WebView
+            android:id="@+id/wb_draw"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:defaultNavHost="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:navGraph="@navigation/nav_graph" />
+            app:layout_constraintTop_toTopOf="parent" />
 
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -41,11 +38,13 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             app:fabAlignmentMode="center"
+            app:fabAnchorMode="cradle"
             app:fabCradleMargin="16dp"
+            app:hideOnScroll="false"
+            app:elevation="0dp"
             app:fabCradleRoundedCornerRadius="60dp"
             app:fabCradleVerticalOffset="10dp"
-            app:removeEmbeddedFabElevation="false"
-            app:theme="@style/MyBottomAppBarStyle" />
+            app:removeEmbeddedFabElevation="true" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/ftn_feed"
