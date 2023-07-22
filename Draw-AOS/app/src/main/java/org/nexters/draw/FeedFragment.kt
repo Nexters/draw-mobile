@@ -32,7 +32,7 @@ class FeedFragment : Fragment() {
             settings.javaScriptEnabled = true
             settings.domStorageEnabled = true
             settings.setSupportMultipleWindows(true)
-            loadUrl("https://inthiswork.com/archives/61366")
+            loadUrl(UrlManager.URL_FEED)
         }
     }
 
