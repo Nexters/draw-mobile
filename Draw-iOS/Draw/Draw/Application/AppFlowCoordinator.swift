@@ -9,21 +9,21 @@ import UIKit
 
 final class AppFlowCoordinator {
 
-    var navigationController: UINavigationController
+    var tabBarController: UITabBarController
     private let appDIContainer: AppDIContainer
     
     init(
-        navigationController: UINavigationController,
+        tabBarController: UITabBarController,
         appDIContainer: AppDIContainer
     ) {
-        self.navigationController = navigationController
+        self.tabBarController = tabBarController
         self.appDIContainer = appDIContainer
     }
 
     func start() {
-        let trendingTrendingRepositoriesFeatureDIContainer = appDIContainer.makeTrendingRepositoriesFeatureDIContainer()
-        let flow = trendingTrendingRepositoriesFeatureDIContainer.makeTrendingRepositoriesFlowCoordinator(
-            navigationController: navigationController
+        let tabBarDIContainer = appDIContainer.makeTabBarDIContainer()
+        let flow = tabBarDIContainer.makeTabBarFlowCoordinator(
+            tabBarController: tabBarController
         )
         flow.start()
     }

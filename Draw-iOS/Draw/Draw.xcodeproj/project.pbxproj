@@ -66,6 +66,11 @@
 		705B84612A6920BF00B30CBC /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705B84602A6920BF00B30CBC /* Cancellable.swift */; };
 		705B84632A69218B00B30CBC /* DefaultImagesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705B84622A69218B00B30CBC /* DefaultImagesRepository.swift */; };
 		705B84662A6921BA00B30CBC /* RepositoryTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705B84652A6921BA00B30CBC /* RepositoryTask.swift */; };
+		70CC32182A6E7576002282AE /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 70CC32172A6E7576002282AE /* SnapKit */; };
+		70FE54412A6E564B005CF966 /* TabBarDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FE54402A6E564B005CF966 /* TabBarDIContainer.swift */; };
+		70FE54452A6E6392005CF966 /* HomeDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FE54442A6E6392005CF966 /* HomeDIContainer.swift */; };
+		70FE54472A6E63B6005CF966 /* TabBarFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FE54462A6E63B6005CF966 /* TabBarFlowCoordinator.swift */; };
+		70FE54492A6E6AA0005CF966 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FE54482A6E6AA0005CF966 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -130,6 +135,10 @@
 		705B84602A6920BF00B30CBC /* Cancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancellable.swift; sourceTree = "<group>"; };
 		705B84622A69218B00B30CBC /* DefaultImagesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultImagesRepository.swift; sourceTree = "<group>"; };
 		705B84652A6921BA00B30CBC /* RepositoryTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTask.swift; sourceTree = "<group>"; };
+		70FE54402A6E564B005CF966 /* TabBarDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarDIContainer.swift; sourceTree = "<group>"; };
+		70FE54442A6E6392005CF966 /* HomeDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDIContainer.swift; sourceTree = "<group>"; };
+		70FE54462A6E63B6005CF966 /* TabBarFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarFlowCoordinator.swift; sourceTree = "<group>"; };
+		70FE54482A6E6AA0005CF966 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +146,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70CC32182A6E7576002282AE /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,6 +222,8 @@
 			isa = PBXGroup;
 			children = (
 				705B840B2A68E98600B30CBC /* Utils */,
+				70FE543F2A6E55ED005CF966 /* TabBar */,
+				70FE54432A6E6384005CF966 /* Home */,
 				705B83EB2A68E33400B30CBC /* TrendingRepositoriesFeature */,
 			);
 			path = Presentation;
@@ -490,6 +502,32 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		70FE543F2A6E55ED005CF966 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				70FE54402A6E564B005CF966 /* TabBarDIContainer.swift */,
+				70FE54422A6E6375005CF966 /* Flows */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		70FE54422A6E6375005CF966 /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				70FE54462A6E63B6005CF966 /* TabBarFlowCoordinator.swift */,
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
+		70FE54432A6E6384005CF966 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				70FE54442A6E6392005CF966 /* HomeDIContainer.swift */,
+				70FE54482A6E6AA0005CF966 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -506,6 +544,9 @@
 			dependencies = (
 			);
 			name = Draw;
+			packageProductDependencies = (
+				70CC32172A6E7576002282AE /* SnapKit */,
+			);
 			productName = Draw;
 			productReference = 7000A0572A68DE9000AA442F /* Draw.app */;
 			productType = "com.apple.product-type.application";
@@ -534,6 +575,9 @@
 				Base,
 			);
 			mainGroup = 7000A04E2A68DE9000AA442F;
+			packageReferences = (
+				70CC32162A6E7576002282AE /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 7000A0582A68DE9000AA442F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -561,6 +605,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70FE54412A6E564B005CF966 /* TabBarDIContainer.swift in Sources */,
 				705B84142A68EAB300B30CBC /* Observable.swift in Sources */,
 				705B83E32A68E24500B30CBC /* DataTransferService.swift in Sources */,
 				705B84252A68F0F500B30CBC /* TrendingRepositoriesRepository.swift in Sources */,
@@ -575,6 +620,7 @@
 				705B83E52A68E26000B30CBC /* NetworkService.swift in Sources */,
 				705B840E2A68E9A000B30CBC /* Error+UIError.swift in Sources */,
 				705B845C2A69208700B30CBC /* CoreDataStorage.xcdatamodeld in Sources */,
+				70FE54452A6E6392005CF966 /* HomeDIContainer.swift in Sources */,
 				7000A0722A68DF1200AA442F /* AppConfiguration.swift in Sources */,
 				705B84122A68EA4E00B30CBC /* UITableView+DequeueReusableCell.swift in Sources */,
 				705B83FD2A68E6BE00B30CBC /* TrendingRepositoryListItemCell.swift in Sources */,
@@ -594,6 +640,7 @@
 				705B845F2A6920AE00B30CBC /* DispatchQueueType.swift in Sources */,
 				7000A05B2A68DE9000AA442F /* AppDelegate.swift in Sources */,
 				705B84032A68E70200B30CBC /* TrendingRepositoriesListTableViewController.swift in Sources */,
+				70FE54492A6E6AA0005CF966 /* HomeViewController.swift in Sources */,
 				705B84342A68F3FB00B30CBC /* ImagesRequestQuery.swift in Sources */,
 				705B84542A69202700B30CBC /* ImagesStorage.swift in Sources */,
 				705B840A2A68E8AB00B30CBC /* Images+TrendingRepositoriesFeature.swift in Sources */,
@@ -615,6 +662,7 @@
 				705B83F62A68E5D700B30CBC /* TrendingRepositoriesListContentViewModel.swift in Sources */,
 				705B84322A68F3E800B30CBC /* TrendingRepositoriesRequestQuery.swift in Sources */,
 				705B83FF2A68E6DB00B30CBC /* TrendingRepositoryListLoadingItemCell.swift in Sources */,
+				70FE54472A6E63B6005CF966 /* TabBarFlowCoordinator.swift in Sources */,
 				705B84562A69203A00B30CBC /* CoreDataImagesStorage.swift in Sources */,
 				705B843F2A68F47D00B30CBC /* TrendingRepositoriesPageDto.swift in Sources */,
 			);
@@ -834,6 +882,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		70CC32162A6E7576002282AE /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		70CC32172A6E7576002282AE /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 70CC32162A6E7576002282AE /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		705B845A2A69208700B30CBC /* CoreDataStorage.xcdatamodeld */ = {
