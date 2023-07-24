@@ -15,10 +15,10 @@
         android:theme="@style/Theme.Draw"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".OnBoardingActivity"
             android:exported="false" />
         <activity
-            android:name=".OnBoardingActivity"
+            android:name=".MainActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustUnspecified">
             <intent-filter>
