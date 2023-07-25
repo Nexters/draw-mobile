@@ -14,11 +14,11 @@ protocol TabBarFlowCoordinatorDependencies {
 
 final class TabBarFlowCoordinator {
     
-    private weak var tabBarController: UITabBarController?
+    private weak var tabBarController: DrawTabBarController?
     private let dependencies: TabBarFlowCoordinatorDependencies
 
     init(
-        tabBarController: UITabBarController,
+        tabBarController: DrawTabBarController,
         dependencies: TabBarFlowCoordinatorDependencies
     ) {
         self.tabBarController = tabBarController
@@ -28,9 +28,11 @@ final class TabBarFlowCoordinator {
     func start() {
         let homeViewController = dependencies.makeHomeViewController()
         
-        tabBarController?.viewControllers = [homeViewController]
+        tabBarController?.setViewControllers(
+            feedViewController: homeViewController,
+            questionViewController: UIViewController(),
+            myViewController: UIViewController())
         
-        tabBarController?.selectedIndex = 0
         
 //        let viewController =  dependencies.makeTrendingRepositoriesListViewController()
 //        tabBarController.

@@ -9,11 +9,11 @@ import UIKit
 
 final class AppFlowCoordinator {
 
-    var tabBarController: UITabBarController
+    var tabBarController: DrawTabBarController
     private let appDIContainer: AppDIContainer
     
     init(
-        tabBarController: UITabBarController,
+        tabBarController: DrawTabBarController,
         appDIContainer: AppDIContainer
     ) {
         self.tabBarController = tabBarController

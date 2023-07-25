@@ -24,13 +24,19 @@ final class HomeViewController: BaseViewController {
     
     // MARK: - Setup Methods
     
-    override func setupProperty() {
-        super.setupProperty()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
-        if let url = URL(string: "https://www.apple.com") {
+        if let url = URL(string: "https://draw-nexters.netlify.app/feed") {
             let request = URLRequest(url: url)
             webView.load(request)
         }
+    }
+    
+    override func setupProperty() {
+        super.setupProperty()
+        
+        webView.scrollView.isScrollEnabled = false
     }
     
     override func setupHierarchy() {

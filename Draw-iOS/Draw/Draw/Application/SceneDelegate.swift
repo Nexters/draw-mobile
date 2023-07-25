@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let window = UIWindow(windowScene: windowScene)
         
-        let tabBarController = UITabBarController()
+        let tabBarController = DrawTabBarController()
 
         window.rootViewController = tabBarController
         appFlowCoordinator = AppFlowCoordinator(

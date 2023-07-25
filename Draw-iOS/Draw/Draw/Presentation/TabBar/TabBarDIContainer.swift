@@ -24,7 +24,7 @@ final class TabBarDIContainer: TabBarFlowCoordinatorDependencies {
     }
     
     // MARK: - Flow Coordinators
-    func makeTabBarFlowCoordinator(tabBarController: UITabBarController) -> TabBarFlowCoordinator {
+    func makeTabBarFlowCoordinator(tabBarController: DrawTabBarController) -> TabBarFlowCoordinator {
         TabBarFlowCoordinator(
             tabBarController: tabBarController,
             dependencies: self

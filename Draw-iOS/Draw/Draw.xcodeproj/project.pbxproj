@@ -79,6 +79,9 @@
 		70CC32312A6F955D002282AE /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 70CC32302A6F955D002282AE /* RxRelay */; };
 		70CC32332A6F955D002282AE /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 70CC32322A6F955D002282AE /* RxSwift */; };
 		70CC323D2A6FA18D002282AE /* DrawTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CC323C2A6FA18D002282AE /* DrawTests.swift */; };
+		70CC32442A6FAB18002282AE /* DrawTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CC32432A6FAB18002282AE /* DrawTabBarController.swift */; };
+		70CC32462A6FACBD002282AE /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CC32452A6FACBD002282AE /* UIView+Extensions.swift */; };
+		70CC32482A6FADD6002282AE /* UIBezierPath+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CC32472A6FADD6002282AE /* UIBezierPath+Extension.swift */; };
 		70FE54412A6E564B005CF966 /* TabBarDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FE54402A6E564B005CF966 /* TabBarDIContainer.swift */; };
 		70FE54452A6E6392005CF966 /* HomeDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FE54442A6E6392005CF966 /* HomeDIContainer.swift */; };
 		70FE54472A6E63B6005CF966 /* TabBarFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FE54462A6E63B6005CF966 /* TabBarFlowCoordinator.swift */; };
@@ -166,6 +169,9 @@
 		70CC32242A6F94E4002282AE /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		70CC323A2A6FA18D002282AE /* DrawTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DrawTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		70CC323C2A6FA18D002282AE /* DrawTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawTests.swift; sourceTree = "<group>"; };
+		70CC32432A6FAB18002282AE /* DrawTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawTabBarController.swift; sourceTree = "<group>"; };
+		70CC32452A6FACBD002282AE /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		70CC32472A6FADD6002282AE /* UIBezierPath+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBezierPath+Extension.swift"; sourceTree = "<group>"; };
 		70FE54402A6E564B005CF966 /* TabBarDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarDIContainer.swift; sourceTree = "<group>"; };
 		70FE54442A6E6392005CF966 /* HomeDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDIContainer.swift; sourceTree = "<group>"; };
 		70FE54462A6E63B6005CF966 /* TabBarFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarFlowCoordinator.swift; sourceTree = "<group>"; };
@@ -356,6 +362,7 @@
 				705B840C2A68E98E00B30CBC /* Extensions */,
 				705B84132A68EAB300B30CBC /* Observable.swift */,
 				705B84152A68EAC400B30CBC /* SkeletonLoadable.swift */,
+				70CC32432A6FAB18002282AE /* DrawTabBarController.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -366,6 +373,8 @@
 				705B840D2A68E9A000B30CBC /* Error+UIError.swift */,
 				705B840F2A68EA3C00B30CBC /* UIViewController+AddChild.swift */,
 				705B84112A68EA4E00B30CBC /* UITableView+DequeueReusableCell.swift */,
+				70CC32452A6FACBD002282AE /* UIView+Extensions.swift */,
+				70CC32472A6FADD6002282AE /* UIBezierPath+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -751,10 +760,12 @@
 				705B843D2A68F46C00B30CBC /* RepositoryDto.swift in Sources */,
 				705B845F2A6920AE00B30CBC /* DispatchQueueType.swift in Sources */,
 				7000A05B2A68DE9000AA442F /* AppDelegate.swift in Sources */,
+				70CC32462A6FACBD002282AE /* UIView+Extensions.swift in Sources */,
 				705B84032A68E70200B30CBC /* TrendingRepositoriesListTableViewController.swift in Sources */,
 				70CC32292A6F94E4002282AE /* BaseCollectionReusableView.swift in Sources */,
 				70FE54492A6E6AA0005CF966 /* HomeViewController.swift in Sources */,
 				705B84342A68F3FB00B30CBC /* ImagesRequestQuery.swift in Sources */,
+				70CC32482A6FADD6002282AE /* UIBezierPath+Extension.swift in Sources */,
 				70CC322A2A6F94E4002282AE /* BaseViewController.swift in Sources */,
 				705B84542A69202700B30CBC /* ImagesStorage.swift in Sources */,
 				70CC321D2A6E7A3D002282AE /* QuestionViewController.swift in Sources */,
@@ -766,6 +777,7 @@
 				705B844F2A691FDD00B30CBC /* TrendingRepositoriesStorage.swift in Sources */,
 				705B84162A68EAC400B30CBC /* SkeletonLoadable.swift in Sources */,
 				70CC321B2A6E7A31002282AE /* QuestionDIContainer.swift in Sources */,
+				70CC32442A6FAB18002282AE /* DrawTabBarController.swift in Sources */,
 				7000A0742A68DF2300AA442F /* AppFlowCoordinator.swift in Sources */,
 				705B841A2A68F01200B30CBC /* FetchTrendingRepositoriesUseCase.swift in Sources */,
 				705B84082A68E89700B30CBC /* Localizations+TrendingRepositoriesFeature.swift in Sources */,
