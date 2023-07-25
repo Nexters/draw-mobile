@@ -18,12 +18,6 @@ final class HomeViewController: BaseViewController {
     
     // MARK: - View Lifecylce
     
-    override func loadView() {
-        self.view = webView
-    }
-    
-    // MARK: - Setup Methods
-    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -33,17 +27,27 @@ final class HomeViewController: BaseViewController {
         }
     }
     
+    // MARK: - Setup Methods
+    
     override func setupProperty() {
         super.setupProperty()
+        
+        view.backgroundColor = .init(hex: 0xF2F4F6)
         
         webView.scrollView.isScrollEnabled = false
     }
     
     override func setupHierarchy() {
         super.setupHierarchy()
+        
+        view.addSubviews([webView])
     }
     
     override func setupLayout() {
         super.setupLayout()
+        
+        webView.snp.makeConstraints { make in
+            make.edges.equalTo(view.safeAreaLayoutGuide)
+        }
     }
 }
