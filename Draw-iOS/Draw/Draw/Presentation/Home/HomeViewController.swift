@@ -6,23 +6,38 @@
 //
 
 import UIKit
+import WebKit
 
 import SnapKit
 
-final class HomeViewController: UIViewController {
-    private let titleLabel: UILabel = .init()
+final class HomeViewController: BaseViewController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    // MARK: - UI Components
+    
+    private let webView: WKWebView = .init()
+    
+    // MARK: - View Lifecylce
+    
+    override func loadView() {
+        self.view = webView
+    }
+    
+    // MARK: - Setup Methods
+    
+    override func setupProperty() {
+        super.setupProperty()
         
-        view.backgroundColor = .white
-        
-        self.view.addSubview(titleLabel)
-        
-        titleLabel.snp.makeConstraints { make in
-            make.top.leading.trailing.bottom.equalToSuperview()
+        if let url = URL(string: "https://www.apple.com") {
+            let request = URLRequest(url: url)
+            webView.load(request)
         }
-        
-        titleLabel.text = "하이"
+    }
+    
+    override func setupHierarchy() {
+        super.setupHierarchy()
+    }
+    
+    override func setupLayout() {
+        super.setupLayout()
     }
 }
