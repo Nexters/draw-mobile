@@ -19,9 +19,10 @@ final class DrawTabBarController: BaseViewController {
     
     // MARK: - UI Components
     
-    private let tabBarView: UIView = .init()
+    private let tabBarImageView: UIImageView = .init()
     private let buttonStackView: UIStackView = .init()
     private let feedTabButton: UIButton = .init()
+    private let questionTabButton: UIButton = .init()
     private let myTabButton: UIButton = .init()
     
     public func setViewControllers(
@@ -42,7 +43,7 @@ final class DrawTabBarController: BaseViewController {
             
             viewController.view.snp.makeConstraints {
                 $0.top.leading.trailing.equalToSuperview()
-                $0.bottom.equalTo(tabBarView.snp.top)
+                $0.bottom.equalTo(questionTabButton.snp.top)
             }
         }
         
@@ -59,22 +60,44 @@ final class DrawTabBarController: BaseViewController {
     override func setupProperty() {
         super.setupProperty()
         
+        tabBarImageView.image = .init(named: "ImgTabBar")
+        
         buttonStackView.alignment = .center
         buttonStackView.distribution = .equalSpacing
         
-        feedTabButton.setTitle("Feed", for: .normal)
-        feedTabButton.setTitleColor(.black, for: .normal)
         
-        myTabButton.setTitle("My", for: .normal)
-        myTabButton.setTitleColor(.black, for: .normal)
+        var configuration = UIButton.Configuration.plain()
+        var container = AttributeContainer()
+        
+        container.font = .systemFont(ofSize: 12, weight: .semibold)
+        
+        configuration.baseForegroundColor = .black
+        configuration.titleAlignment = .center
+        configuration.preferredSymbolConfigurationForImage = UIImage.SymbolConfiguration(pointSize: 15)
+        configuration.imagePadding = 6
+        configuration.imagePlacement = .top
+
+        configuration.attributedTitle = AttributedString("Feed", attributes: container)
+        configuration.image = UIImage(named: "IconFeed")
+        feedTabButton.configuration = configuration
+        
+        configuration.attributedTitle = AttributedString("My", attributes: container)
+        configuration.image = UIImage(named: "IconMy")
+        myTabButton.configuration = configuration
+        
+        configuration.attributedTitle = .none
+        configuration.image = UIImage(named: "ImgPlus")
+        configuration.preferredSymbolConfigurationForImage = UIImage.SymbolConfiguration(pointSize: 31)
+        questionTabButton.configuration = configuration
+        questionTabButton.configuration = configuration
     }
     
     
     override func setupHierarchy() {
         super.setupHierarchy()
         
-        self.view.addSubviews([tabBarView])
-        tabBarView.addSubviews([buttonStackView])
+        self.view.addSubviews([tabBarImageView])
+        tabBarImageView.addSubviews([buttonStackView, questionTabButton])
         
         buttonStackView.addArrangedSubview(feedTabButton)
         buttonStackView.addArrangedSubview(.init(frame: .init(x: 0, y: 0, width: 50, height: 50)))
@@ -84,7 +107,7 @@ final class DrawTabBarController: BaseViewController {
     override func setupLayout() {
         super.setupLayout()
         
-        tabBarView.snp.makeConstraints { make in
+        tabBarImageView.snp.makeConstraints { make in
             make.leading.trailing.bottom.equalToSuperview()
             make.height.equalTo(80)
         }
@@ -95,11 +118,16 @@ final class DrawTabBarController: BaseViewController {
         }
         
         feedTabButton.snp.makeConstraints { make in
-            make.width.height.equalTo(50)
+            make.width.height.equalTo(60)
         }
         
         myTabButton.snp.makeConstraints { make in
-            make.width.height.equalTo(50)
+            make.width.height.equalTo(60)
+        }
+        
+        questionTabButton.snp.makeConstraints { make in
+            make.bottom.equalToSuperview().inset(24)
+            make.centerX.equalToSuperview()
         }
     }
 }

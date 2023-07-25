@@ -34,6 +34,8 @@ final class HomeViewController: BaseViewController {
         
         view.backgroundColor = .init(hex: 0xF2F4F6)
         
+        webView.isOpaque = false
+        webView.backgroundColor = .clear
         webView.scrollView.isScrollEnabled = false
     }
     
