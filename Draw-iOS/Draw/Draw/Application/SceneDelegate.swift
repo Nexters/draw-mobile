@@ -19,11 +19,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let window = UIWindow(windowScene: windowScene)
         
-        let navigationController = UINavigationController()
+        let tabBarController = DrawTabBarController()
 
-        window.rootViewController = navigationController
+        window.rootViewController = tabBarController
         appFlowCoordinator = AppFlowCoordinator(
-            navigationController: navigationController,
+            tabBarController: tabBarController,
             appDIContainer: appDIContainer
         )
         appFlowCoordinator?.start()

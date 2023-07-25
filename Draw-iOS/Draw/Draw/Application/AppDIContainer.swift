@@ -46,5 +46,13 @@ final class AppDIContainer {
         )
         return TrendingRepositoriesFeatureDIContainer(dependencies: dependencies)
     }
+    
+    func makeTabBarDIContainer() -> TabBarDIContainer {
+        let dependencies = TabBarDIContainer.Dependencies(
+            appConfiguration: appConfiguration
+        )
+        
+        return TabBarDIContainer(dependencies: dependencies)
+    }
 }
 
