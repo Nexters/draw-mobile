@@ -22,14 +22,11 @@ open class DrawWebViewClient:WebViewClient() {
         // 웹 페이지 로딩 완료 시 원하는 동작을 수행합니다.
     }
 
-    // 사용자가 링크를 클릭할 때 호출됩니다.
     @Deprecated("Deprecated in Java", ReplaceWith("false"))
     override fun shouldOverrideUrlLoading(view: WebView?, url: String?): Boolean {
-        // 원하는 방식으로 링크 클릭을 처리합니다.
-        // true를 반환하면 WebView가 링크 처리를 하지 않습니다.
-        // false를 반환하면 WebView가 링크 처리를 합니다.
+
         Log.d("TAG", "shouldOverrideUrlLoading: ${url}")
-        return if (url == UrlManager.URL_FEED) {
+        return if (url == BuildConfig.WEB_URL_FEED) {
             val intent = Intent(view?.context , MainActivity::class.java)
             startActivity(view?.context!!,intent,null)
             true

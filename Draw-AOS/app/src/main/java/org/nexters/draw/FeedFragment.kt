@@ -38,7 +38,7 @@ class FeedFragment : Fragment() {
             settings.javaScriptEnabled = true
             settings.domStorageEnabled = true
             settings.setSupportMultipleWindows(true)
-            loadUrl(UrlManager.URL_FEED)
+            loadUrl(BuildConfig.WEB_URL_FEED)
         }
         binding.wbDraw.addJavascriptInterface(JavascriptInterface(mainViewModel), "draw")
     }
