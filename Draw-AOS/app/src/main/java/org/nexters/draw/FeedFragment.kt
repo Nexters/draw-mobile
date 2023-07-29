@@ -14,9 +14,11 @@ import org.nexters.draw.databinding.FragmentFeedBinding
 class FeedFragment : Fragment() {
 
     private var _binding: FragmentFeedBinding? = null
+    private val binding get() = _binding!!
+
     private val mainViewModel: MainViewModel by activityViewModels()
 
-    private val binding get() = _binding!!
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -39,6 +41,11 @@ class FeedFragment : Fragment() {
             loadUrl(UrlManager.URL_FEED)
         }
         binding.wbDraw.addJavascriptInterface(JavascriptInterface(mainViewModel), "draw")
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 }
