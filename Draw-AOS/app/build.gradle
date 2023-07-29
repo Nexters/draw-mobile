@@ -3,6 +3,9 @@ plugins {
     id 'org.jetbrains.kotlin.android'
 }
 
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
 android {
     namespace 'org.nexters.draw'
     compileSdk 34
@@ -15,6 +18,14 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "WEB_URL_ONBOARDING", properties["WEB_URL_ONBOARDING"]
+        buildConfigField "String", "WEB_URL_FEED", properties["WEB_URL_FEED"]
+        buildConfigField "String", "WEB_URL_FEED_DETAIL", properties["WEB_URL_FEED_DETAIL"]
+        buildConfigField "String", "WEB_URL_MY_PAGE", properties["WEB_URL_MY_PAGE"]
+        buildConfigField "String", "WEB_URL_MY_PAGE_SETTING", properties["WEB_URL_MY_PAGE_SETTING"]
+        buildConfigField "String", "WEB_URL_NEW_QUESTION", properties["WEB_URL_NEW_QUESTION"]
+
     }
 
     buildTypes {
