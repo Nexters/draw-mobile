@@ -23,6 +23,8 @@
 		7000A92B2A70E3A100431275 /* QuestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7000A92A2A70E3A100431275 /* QuestionViewModel.swift */; };
 		7000A92D2A70E3C400431275 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7000A92C2A70E3C400431275 /* QuestionView.swift */; };
 		7000A9302A70F20C00431275 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7000A92F2A70F20C00431275 /* WebView.swift */; };
+		70BF67BE2A75743000AFB25F /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BF67BD2A75743000AFB25F /* Bundle+Extension.swift */; };
+		70BF67C12A75767000AFB25F /* Url+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BF67C02A75767000AFB25F /* Url+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,11 @@
 		7000A92A2A70E3A100431275 /* QuestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewModel.swift; sourceTree = "<group>"; };
 		7000A92C2A70E3C400431275 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		7000A92F2A70F20C00431275 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		70BF67BA2A75732D00AFB25F /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		70BF67BB2A75733A00AFB25F /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		70BF67BD2A75743000AFB25F /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
+		70BF67BF2A75752900AFB25F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		70BF67C02A75767000AFB25F /* Url+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Url+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,10 +119,12 @@
 		7000A8D12A70C6B800431275 /* Draw-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				70BF67BF2A75752900AFB25F /* Info.plist */,
+				70BF67BC2A7573DF00AFB25F /* Config */,
 				7000A8FF2A70C80B00431275 /* Application */,
+				7000A9002A70C83300431275 /* Presentation */,
 				7000A9052A70C8A600431275 /* Data */,
 				7000A9042A70C89600431275 /* Domain */,
-				7000A9002A70C83300431275 /* Presentation */,
 				7000A8FE2A70C7FD00431275 /* Util */,
 				7000A8FC2A70C7C400431275 /* Resources */,
 				7000A8D82A70C6B900431275 /* Preview Content */,
@@ -159,6 +168,8 @@
 		7000A8FE2A70C7FD00431275 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				70BF67BD2A75743000AFB25F /* Bundle+Extension.swift */,
+				70BF67C02A75767000AFB25F /* Url+Extension.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -306,6 +317,15 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		70BF67BC2A7573DF00AFB25F /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				70BF67BA2A75732D00AFB25F /* Debug.xcconfig */,
+				70BF67BB2A75733A00AFB25F /* Release.xcconfig */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -439,8 +459,10 @@
 				7000A92D2A70E3C400431275 /* QuestionView.swift in Sources */,
 				7000A9222A70E15F00431275 /* MyPageView.swift in Sources */,
 				7000A90C2A70C9C000431275 /* TabBarViewModel.swift in Sources */,
+				70BF67BE2A75743000AFB25F /* Bundle+Extension.swift in Sources */,
 				7000A92B2A70E3A100431275 /* QuestionViewModel.swift in Sources */,
 				7000A9152A70DC0D00431275 /* FeedViewModel.swift in Sources */,
+				70BF67C12A75767000AFB25F /* Url+Extension.swift in Sources */,
 				7000A9082A70C97200431275 /* AppDIContainer.swift in Sources */,
 				7000A9032A70C89200431275 /* TabBarView.swift in Sources */,
 				7000A9172A70DC2D00431275 /* FeedView.swift in Sources */,
@@ -485,6 +507,7 @@
 /* Begin XCBuildConfiguration section */
 		7000A8F12A70C6B900431275 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70BF67BA2A75732D00AFB25F /* Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -545,6 +568,7 @@
 		};
 		7000A8F22A70C6B900431275 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70BF67BB2A75733A00AFB25F /* Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -599,6 +623,7 @@
 		};
 		7000A8F42A70C6B900431275 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70BF67BA2A75732D00AFB25F /* Debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -608,6 +633,7 @@
 				DEVELOPMENT_TEAM = X64MATB2CC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Draw-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -632,6 +658,7 @@
 		};
 		7000A8F52A70C6B900431275 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70BF67BB2A75733A00AFB25F /* Release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -641,6 +668,7 @@
 				DEVELOPMENT_TEAM = X64MATB2CC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Draw-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -665,6 +693,7 @@
 		};
 		7000A8F72A70C6B900431275 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70BF67BA2A75732D00AFB25F /* Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -685,6 +714,7 @@
 		};
 		7000A8F82A70C6B900431275 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70BF67BB2A75733A00AFB25F /* Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -705,6 +735,7 @@
 		};
 		7000A8FA2A70C6B900431275 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70BF67BA2A75732D00AFB25F /* Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -723,6 +754,7 @@
 		};
 		7000A8FB2A70C6B900431275 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70BF67BB2A75733A00AFB25F /* Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

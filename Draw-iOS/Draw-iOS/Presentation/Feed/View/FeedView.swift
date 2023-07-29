@@ -11,12 +11,13 @@ struct FeedView: View {
     @StateObject var viewModel: FeedViewModel
     
     var body: some View {
-        WebView(url: URL(string: "https://draw-nexters.netlify.app/feed")!)
+        let _ = print("hi")
+        WebView(url: .feed)
     }
 }
 
 struct FeedView_Previews: PreviewProvider {
     static var previews: some View {
-        FeedView(viewModel: AppDIContainer().tabBarDependencies().feedViewModel)
+        FeedView(viewModel: .init())
     }
 }

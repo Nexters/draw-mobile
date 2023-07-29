@@ -11,12 +11,12 @@ struct QuestionView: View {
     @StateObject var viewModel: QuestionViewModel
     
     var body: some View {
-        Text("Question")
+        WebView(url: .newQuestion)
     }
 }
 
 struct QuestionView_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionView(viewModel: AppDIContainer().tabBarDependencies().questionViewModel)
+        QuestionView(viewModel: .init())
     }
 }

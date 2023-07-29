@@ -11,12 +11,12 @@ struct MyPageView: View {
     @StateObject var viewModel: MyPageViewModel
     
     var body: some View {
-        Text("My Page")
+        WebView(url: .myPage)
     }
 }
 
 struct MyPageView_Previews: PreviewProvider {
     static var previews: some View {
-        MyPageView(viewModel: AppDIContainer().tabBarDependencies().myPageViewModel)
+        MyPageView(viewModel: .init())
     }
 }

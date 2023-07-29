@@ -10,18 +10,22 @@ import SwiftUI
 struct TabBarView: View {
     @StateObject var viewModel: TabBarViewModel
     
+    let feedView = FeedView(viewModel: .init())
+    let questionView = QuestionView(viewModel: .init())
+    let myPageView = MyPageView(viewModel: .init())
+    
     var body: some View {
-        let feedView = FeedView(viewModel: self.viewModel.feedViewModel)
-        let questionView = QuestionView(viewModel: self.viewModel.questionViewModel)
-        let myPageView = MyPageView(viewModel: self.viewModel.myPageViewModel)
-        
         ZStack {
+            feedView.opacity(1)
+            questionView.opacity(1)
+            myPageView.opacity(1)
+            
             switch viewModel.currentTab {
-            case .feed:
-                feedView
-            case .question: questionView
-            case .myPage: myPageView
+            case .feed: feedView.opacity(1)
+            case .question: questionView.opacity(1)
+            case .myPage: myPageView.opacity(1)
             }
+            
             tabBarView()
         }
         .background(Color("ColorBackgroundWhite"))
@@ -45,7 +49,7 @@ struct TabBarView: View {
                     Spacer()
                     
                     Button(action: {
-                        
+                        self.viewModel.currentTab = .feed
                     }, label: {
                         Image("ImgFeed")
                             .resizable()
@@ -60,7 +64,7 @@ struct TabBarView: View {
                     Spacer()
                     
                     Button(action: {
-                        
+                        self.viewModel.currentTab = .myPage
                     }, label: {
                         Image("ImgMyPage")
                             .resizable()
@@ -76,7 +80,7 @@ struct TabBarView: View {
                 Spacer()
                 
                 Button(action: {
-                    
+                    self.viewModel.currentTab = .question
                 }, label: {
                     Image("ImgPlus")
                         .resizable()
