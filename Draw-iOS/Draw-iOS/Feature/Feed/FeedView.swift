@@ -2,22 +2,23 @@
 //  FeedView.swift
 //  Draw-iOS
 //
-//  Created by 송영모 on 2023/07/26.
+//  Created by 송영모 on 2023/07/30.
 //
 
 import SwiftUI
 
+import ComposableArchitecture
+
 struct FeedView: View {
-    @StateObject var viewModel: FeedViewModel
+    let store: StoreOf<FeedStore>
     
     var body: some View {
-        let _ = print("hi")
         WebView(url: .feed)
     }
 }
 
 struct FeedView_Previews: PreviewProvider {
     static var previews: some View {
-        FeedView(viewModel: .init())
+        FeedView(store: .init(initialState: .init(), reducer: FeedStore()._printChanges()))
     }
 }

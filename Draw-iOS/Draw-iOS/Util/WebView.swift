@@ -9,10 +9,10 @@ import SwiftUI
 import WebKit
 
 struct WebView: UIViewRepresentable {
+    let webView = WKWebView()
     let url: URL
     
     func makeUIView(context: Context) -> WKWebView {
-        let webView = WKWebView()
         
         webView.isOpaque = false
         webView.backgroundColor = .clear

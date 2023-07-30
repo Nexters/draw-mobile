@@ -2,13 +2,15 @@
 //  MyPageView.swift
 //  Draw-iOS
 //
-//  Created by 송영모 on 2023/07/26.
+//  Created by 송영모 on 2023/07/30.
 //
 
 import SwiftUI
 
+import ComposableArchitecture
+
 struct MyPageView: View {
-    @StateObject var viewModel: MyPageViewModel
+    let store: StoreOf<MyPageStore>
     
     var body: some View {
         WebView(url: .myPage)
@@ -17,6 +19,6 @@ struct MyPageView: View {
 
 struct MyPageView_Previews: PreviewProvider {
     static var previews: some View {
-        MyPageView(viewModel: .init())
+        MyPageView(store: .init(initialState: .init(), reducer: MyPageStore()._printChanges()))
     }
 }

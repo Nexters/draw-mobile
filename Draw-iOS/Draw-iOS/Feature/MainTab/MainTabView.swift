@@ -1,38 +1,41 @@
 //
-//  TabBarView.swift
+//  MainTabView.swift
 //  Draw-iOS
 //
-//  Created by 송영모 on 2023/07/26.
+//  Created by 송영모 on 2023/07/30.
 //
 
 import SwiftUI
 
-struct TabBarView: View {
-    @StateObject var viewModel: TabBarViewModel
-    
-    let feedView = FeedView(viewModel: .init())
-    let questionView = QuestionView(viewModel: .init())
-    let myPageView = MyPageView(viewModel: .init())
+import ComposableArchitecture
+
+struct MainTabView: View {
+    let store: StoreOf<MainTabViewStore>
     
     var body: some View {
-        ZStack {
-            feedView.opacity(1)
-            questionView.opacity(1)
-            myPageView.opacity(1)
-            
-            switch viewModel.currentTab {
-            case .feed: feedView.opacity(1)
-            case .question: questionView.opacity(1)
-            case .myPage: myPageView.opacity(1)
+        WithViewStore(self.store, observe: { $0 }) { viewStore in
+            ZStack {
+                tabView(viewStore: viewStore)
+                
+                tabBarView(viewStore: viewStore)
             }
-            
-            tabBarView()
+            .ignoresSafeArea()
         }
-        .background(Color("ColorBackgroundWhite"))
-        .ignoresSafeArea()
     }
     
-    private func tabBarView() -> some View {
+    @ViewBuilder
+    private func tabView(viewStore: ViewStoreOf<MainTabViewStore>) -> some View {
+        switch viewStore.state.currentScene {
+        case .feed:
+            FeedView(store: self.store.scope(state: \.feed, action: { .feed($0) }))
+        case .question:
+            QuestionView(store: self.store.scope(state: \.question, action: { .question($0) }))
+        case .myPage:
+            MyPageView(store: self.store.scope(state: \.myPage, action: { .myPage($0) }))
+        }
+    }
+    
+    private func tabBarView(viewStore: ViewStoreOf<MainTabViewStore>) -> some View {
         ZStack {
             VStack {
                 Spacer()
@@ -49,7 +52,7 @@ struct TabBarView: View {
                     Spacer()
                     
                     Button(action: {
-                        self.viewModel.currentTab = .feed
+                        viewStore.send(.selectTab(.feed))
                     }, label: {
                         Image("ImgFeed")
                             .resizable()
@@ -64,7 +67,7 @@ struct TabBarView: View {
                     Spacer()
                     
                     Button(action: {
-                        self.viewModel.currentTab = .myPage
+                        viewStore.send(.selectTab(.myPage))
                     }, label: {
                         Image("ImgMyPage")
                             .resizable()
@@ -80,7 +83,7 @@ struct TabBarView: View {
                 Spacer()
                 
                 Button(action: {
-                    self.viewModel.currentTab = .question
+                    viewStore.send(.selectTab(.question))
                 }, label: {
                     Image("ImgPlus")
                         .resizable()
@@ -92,8 +95,8 @@ struct TabBarView: View {
     }
 }
 
-struct TabBarView_Previews: PreviewProvider {
+struct MainTabView_Previews: PreviewProvider {
     static var previews: some View {
-        TabBarView(viewModel: AppDIContainer().tabBarDependencies())
+        MainTabView(store: .init(initialState: .init(), reducer: MainTabViewStore()._printChanges()))
     }
 }
