@@ -18,6 +18,8 @@ struct WebView: UIViewRepresentable {
         webView.backgroundColor = .clear
         webView.scrollView.isScrollEnabled = false
         
+        
+        print("[D] \(url) 웹뷰")
         return webView
     }
     

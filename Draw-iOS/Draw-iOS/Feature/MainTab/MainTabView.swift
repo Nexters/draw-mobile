@@ -15,23 +15,24 @@ struct MainTabView: View {
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
             ZStack {
-                tabView(viewStore: viewStore)
+                FeedView(
+                    store: self.store.scope(state: \.feed, action: { .feed($0) })
+                )
+                .opacity(viewStore.state.currentScene == .feed ? 1 : 0)
+                
+                QuestionView(
+                    store: self.store.scope(state: \.question, action: { .question($0) })
+                )
+                .opacity(viewStore.state.currentScene == .question ? 1 : 0)
+                
+                MyPageView(
+                    store: self.store.scope(state: \.myPage, action: { .myPage($0) })
+                )
+                .opacity(viewStore.state.currentScene == .myPage ? 1 : 0)
                 
                 tabBarView(viewStore: viewStore)
             }
             .ignoresSafeArea()
-        }
-    }
-    
-    @ViewBuilder
-    private func tabView(viewStore: ViewStoreOf<MainTabViewStore>) -> some View {
-        switch viewStore.state.currentScene {
-        case .feed:
-            FeedView(store: self.store.scope(state: \.feed, action: { .feed($0) }))
-        case .question:
-            QuestionView(store: self.store.scope(state: \.question, action: { .question($0) }))
-        case .myPage:
-            MyPageView(store: self.store.scope(state: \.myPage, action: { .myPage($0) }))
         }
     }
     
