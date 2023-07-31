@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.Draw" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="android:statusBarColor">@color/bg_white</item>
+        <item name="android:windowFullscreen">true</item>
+        <!-- API 31+ specific attributes -->
+        <item name="android:windowSplashScreenBackground">@color/sub_green</item>
+        <item name="windowSplashScreenAnimationDuration">10</item>
+        <item name="postSplashScreenTheme">@style/Theme.Draw</item>
+    </style>
+</resources>

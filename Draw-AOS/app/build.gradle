@@ -73,8 +73,11 @@ dependencies {
     //webview
     implementation 'androidx.browser:browser:1.5.0'
 
-    implementation 'androidx.fragment:fragment-ktx:1.6.0'
+    implementation 'androidx.fragment:fragment-ktx:1.6.1'
     implementation 'androidx.activity:activity-ktx:1.7.2'
+
+    //splash
+    implementation 'androidx.core:core-splashscreen:1.0.0-beta02'
 
 
 
