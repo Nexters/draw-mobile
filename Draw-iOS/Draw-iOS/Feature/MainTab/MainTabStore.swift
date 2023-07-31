@@ -21,6 +21,7 @@ struct MainTabViewStore: ReducerProtocol {
         var currentScene: MainScene = .feed
         
         var isShowTabBar: Bool = true
+        var isShareSheetPresented: Bool = false
         
         var feed: FeedStore.State = .init()
         var question: QuestionStore.State = .init()
@@ -32,6 +33,7 @@ struct MainTabViewStore: ReducerProtocol {
         
         case selectTab(MainScene)
         case showTabBar(Bool)
+        case setShareSheet(isPresented: Bool)
         
         case feed(FeedStore.Action)
         case question(QuestionStore.Action)

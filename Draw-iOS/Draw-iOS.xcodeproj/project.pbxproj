@@ -18,6 +18,7 @@
 		7053331B2A77805200925CD9 /* WebMessageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7053331A2A77805200925CD9 /* WebMessageType.swift */; };
 		7070585F2A764B9F00B4F63F /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7070585E2A764B9F00B4F63F /* WebView.swift */; };
 		707058612A775CAD00B4F63F /* ContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707058602A775CAD00B4F63F /* ContentController.swift */; };
+		7087F96F2A778A9400760EE3 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7087F96E2A778A9400760EE3 /* ActivityViewController.swift */; };
 		70BF67BE2A75743000AFB25F /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BF67BD2A75743000AFB25F /* Bundle+Extension.swift */; };
 		70BF67C12A75767000AFB25F /* Url+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BF67C02A75767000AFB25F /* Url+Extension.swift */; };
 		70BF67C42A7640A200AFB25F /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 70BF67C32A7640A200AFB25F /* ComposableArchitecture */; };
@@ -65,6 +66,7 @@
 		7053331A2A77805200925CD9 /* WebMessageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebMessageType.swift; sourceTree = "<group>"; };
 		7070585E2A764B9F00B4F63F /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		707058602A775CAD00B4F63F /* ContentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentController.swift; sourceTree = "<group>"; };
+		7087F96E2A778A9400760EE3 /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		70BF67BA2A75732D00AFB25F /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		70BF67BB2A75733A00AFB25F /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		70BF67BD2A75743000AFB25F /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 		705333132A777C2A00925CD9 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				7087F96D2A778A7200760EE3 /* UIKit */,
 				705333172A777C8F00925CD9 /* NotificationCenter */,
 				705333142A777C3400925CD9 /* WebKit */,
 			);
@@ -244,6 +247,14 @@
 				705333182A777D9700925CD9 /* NotificationCenter+Extension.swift */,
 			);
 			path = NotificationCenter;
+			sourceTree = "<group>";
+		};
+		7087F96D2A778A7200760EE3 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				7087F96E2A778A9400760EE3 /* ActivityViewController.swift */,
+			);
+			path = UIKit;
 			sourceTree = "<group>";
 		};
 		70BF67BC2A7573DF00AFB25F /* Config */ = {
@@ -455,6 +466,7 @@
 				70BF67C82A76412300AFB25F /* MainTabView.swift in Sources */,
 				7053331B2A77805200925CD9 /* WebMessageType.swift in Sources */,
 				70BF67E32A76439E00AFB25F /* FeedStore.swift in Sources */,
+				7087F96F2A778A9400760EE3 /* ActivityViewController.swift in Sources */,
 				707058612A775CAD00B4F63F /* ContentController.swift in Sources */,
 				7070585F2A764B9F00B4F63F /* WebView.swift in Sources */,
 			);
