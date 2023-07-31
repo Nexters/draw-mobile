@@ -32,6 +32,7 @@ struct MainTabView: View {
                 
                 tabBarView(viewStore: viewStore)
             }
+            .background(Color("ColorBackgroundWhite"))
             .ignoresSafeArea()
         }
     }
