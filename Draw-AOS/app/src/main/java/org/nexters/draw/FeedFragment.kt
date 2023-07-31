@@ -40,7 +40,7 @@ class FeedFragment : Fragment() {
             settings.setSupportMultipleWindows(true)
             loadUrl(BuildConfig.WEB_URL_FEED)
         }
-        binding.wbDraw.addJavascriptInterface(JavascriptInterface(mainViewModel), "draw")
+        binding.wbDraw.addJavascriptInterface(JavascriptInterface(mainViewModel,requireContext()), "draw")
     }
 
     override fun onDestroyView() {
