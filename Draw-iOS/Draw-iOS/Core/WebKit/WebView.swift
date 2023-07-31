@@ -14,8 +14,10 @@ struct WebView: UIViewRepresentable {
     
     init(url: URL) {
         self.url = url
-        self.webView.configuration.userContentController.add(ContentController(), name: "showBottomBar")
-        self.webView.configuration.userContentController.add(ContentController(), name: "showShareSheet")
+        
+        WebMessageType.allCases.forEach { webMessageType in
+            self.webView.configuration.userContentController.add(WebMessageHandler(), name: webMessageType.rawValue)
+        }
     }
     
     func makeUIView(context: Context) -> WKWebView {

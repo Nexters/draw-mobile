@@ -20,6 +20,8 @@ struct MainTabViewStore: ReducerProtocol {
     struct State: Equatable {
         var currentScene: MainScene = .feed
         
+        var isShowTabBar: Bool = true
+        
         var feed: FeedStore.State = .init()
         var question: QuestionStore.State = .init()
         var myPage: MyPageStore.State = .init()
@@ -29,6 +31,7 @@ struct MainTabViewStore: ReducerProtocol {
         case binding(BindingAction<State>)
         
         case selectTab(MainScene)
+        case showTabBar(Bool)
         
         case feed(FeedStore.Action)
         case question(QuestionStore.Action)
@@ -41,7 +44,18 @@ struct MainTabViewStore: ReducerProtocol {
         Reduce { state, action in
             switch action {
             case let .selectTab(scene):
+                switch scene {
+                case .question:
+                    state.isShowTabBar = false
+                    
+                default: break
+                }
                 state.currentScene = scene
+                
+                return .none
+                
+            case let .showTabBar(isShow):
+                state.isShowTabBar = isShow
                 return .none
                 
             default: return .none
