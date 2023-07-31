@@ -9,11 +9,9 @@ import SwiftUI
 
 @main
 struct RootApp: App {
-    let appDIContainer: AppDIContainerInterface = AppDIContainer()
-    
     var body: some Scene {
         WindowGroup {
-            TabBarView(viewModel: appDIContainer.tabBarDependencies())
+            RootView(store: .init(initialState: .mainTab(.init()), reducer: RootStore()._printChanges()))
         }
     }
 }

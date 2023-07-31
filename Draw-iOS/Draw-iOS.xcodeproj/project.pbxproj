@@ -13,16 +13,21 @@
 		7000A8E42A70C6B900431275 /* Draw_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7000A8E32A70C6B900431275 /* Draw_iOSTests.swift */; };
 		7000A8EE2A70C6B900431275 /* Draw_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7000A8ED2A70C6B900431275 /* Draw_iOSUITests.swift */; };
 		7000A8F02A70C6B900431275 /* Draw_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7000A8EF2A70C6B900431275 /* Draw_iOSUITestsLaunchTests.swift */; };
-		7000A9032A70C89200431275 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7000A9022A70C89200431275 /* TabBarView.swift */; };
-		7000A9082A70C97200431275 /* AppDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7000A9072A70C97200431275 /* AppDIContainer.swift */; };
-		7000A90C2A70C9C000431275 /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7000A90B2A70C9C000431275 /* TabBarViewModel.swift */; };
-		7000A9152A70DC0D00431275 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7000A9142A70DC0D00431275 /* FeedViewModel.swift */; };
-		7000A9172A70DC2D00431275 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7000A9162A70DC2D00431275 /* FeedView.swift */; };
-		7000A9222A70E15F00431275 /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7000A9212A70E15F00431275 /* MyPageView.swift */; };
-		7000A9242A70E16900431275 /* MyPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7000A9232A70E16900431275 /* MyPageViewModel.swift */; };
-		7000A92B2A70E3A100431275 /* QuestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7000A92A2A70E3A100431275 /* QuestionViewModel.swift */; };
-		7000A92D2A70E3C400431275 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7000A92C2A70E3C400431275 /* QuestionView.swift */; };
-		7000A9302A70F20C00431275 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7000A92F2A70F20C00431275 /* WebView.swift */; };
+		7070585F2A764B9F00B4F63F /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7070585E2A764B9F00B4F63F /* WebView.swift */; };
+		707058612A775CAD00B4F63F /* ContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707058602A775CAD00B4F63F /* ContentController.swift */; };
+		70BF67BE2A75743000AFB25F /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BF67BD2A75743000AFB25F /* Bundle+Extension.swift */; };
+		70BF67C12A75767000AFB25F /* Url+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BF67C02A75767000AFB25F /* Url+Extension.swift */; };
+		70BF67C42A7640A200AFB25F /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 70BF67C32A7640A200AFB25F /* ComposableArchitecture */; };
+		70BF67C82A76412300AFB25F /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BF67C72A76412300AFB25F /* MainTabView.swift */; };
+		70BF67CA2A76415000AFB25F /* MainTabStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BF67C92A76415000AFB25F /* MainTabStore.swift */; };
+		70BF67CC2A76419900AFB25F /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BF67CB2A76419900AFB25F /* RootView.swift */; };
+		70BF67CE2A7641A700AFB25F /* RootStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BF67CD2A7641A700AFB25F /* RootStore.swift */; };
+		70BF67D72A76435F00AFB25F /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BF67D62A76435F00AFB25F /* FeedView.swift */; };
+		70BF67D92A76436900AFB25F /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BF67D82A76436900AFB25F /* MyPageView.swift */; };
+		70BF67DB2A76436F00AFB25F /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BF67DA2A76436F00AFB25F /* QuestionView.swift */; };
+		70BF67E12A76439A00AFB25F /* QuestionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BF67E02A76439A00AFB25F /* QuestionStore.swift */; };
+		70BF67E32A76439E00AFB25F /* FeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BF67E22A76439E00AFB25F /* FeedStore.swift */; };
+		70BF67E52A7643A400AFB25F /* MyPageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BF67E42A7643A400AFB25F /* MyPageStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,16 +57,23 @@
 		7000A8E92A70C6B900431275 /* Draw-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Draw-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7000A8ED2A70C6B900431275 /* Draw_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Draw_iOSUITests.swift; sourceTree = "<group>"; };
 		7000A8EF2A70C6B900431275 /* Draw_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Draw_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		7000A9022A70C89200431275 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
-		7000A9072A70C97200431275 /* AppDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDIContainer.swift; sourceTree = "<group>"; };
-		7000A90B2A70C9C000431275 /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
-		7000A9142A70DC0D00431275 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
-		7000A9162A70DC2D00431275 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
-		7000A9212A70E15F00431275 /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
-		7000A9232A70E16900431275 /* MyPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewModel.swift; sourceTree = "<group>"; };
-		7000A92A2A70E3A100431275 /* QuestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewModel.swift; sourceTree = "<group>"; };
-		7000A92C2A70E3C400431275 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
-		7000A92F2A70F20C00431275 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		7070585E2A764B9F00B4F63F /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		707058602A775CAD00B4F63F /* ContentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentController.swift; sourceTree = "<group>"; };
+		70BF67BA2A75732D00AFB25F /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		70BF67BB2A75733A00AFB25F /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		70BF67BD2A75743000AFB25F /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
+		70BF67BF2A75752900AFB25F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		70BF67C02A75767000AFB25F /* Url+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Url+Extension.swift"; sourceTree = "<group>"; };
+		70BF67C72A76412300AFB25F /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		70BF67C92A76415000AFB25F /* MainTabStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabStore.swift; sourceTree = "<group>"; };
+		70BF67CB2A76419900AFB25F /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		70BF67CD2A7641A700AFB25F /* RootStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootStore.swift; sourceTree = "<group>"; };
+		70BF67D62A76435F00AFB25F /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
+		70BF67D82A76436900AFB25F /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
+		70BF67DA2A76436F00AFB25F /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
+		70BF67E02A76439A00AFB25F /* QuestionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionStore.swift; sourceTree = "<group>"; };
+		70BF67E22A76439E00AFB25F /* FeedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedStore.swift; sourceTree = "<group>"; };
+		70BF67E42A7643A400AFB25F /* MyPageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70BF67C42A7640A200AFB25F /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,10 +125,12 @@
 		7000A8D12A70C6B800431275 /* Draw-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				70BF67BF2A75752900AFB25F /* Info.plist */,
+				70BF67BC2A7573DF00AFB25F /* Config */,
 				7000A8FF2A70C80B00431275 /* Application */,
+				70BF67C52A76410300AFB25F /* Feature */,
 				7000A9052A70C8A600431275 /* Data */,
 				7000A9042A70C89600431275 /* Domain */,
-				7000A9002A70C83300431275 /* Presentation */,
 				7000A8FE2A70C7FD00431275 /* Util */,
 				7000A8FC2A70C7C400431275 /* Resources */,
 				7000A8D82A70C6B900431275 /* Preview Content */,
@@ -159,6 +174,9 @@
 		7000A8FE2A70C7FD00431275 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				7070585E2A764B9F00B4F63F /* WebView.swift */,
+				70BF67BD2A75743000AFB25F /* Bundle+Extension.swift */,
+				70BF67C02A75767000AFB25F /* Url+Extension.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -167,30 +185,10 @@
 			isa = PBXGroup;
 			children = (
 				7000A8D22A70C6B800431275 /* RootApp.swift */,
-				7000A9072A70C97200431275 /* AppDIContainer.swift */,
+				70BF67CB2A76419900AFB25F /* RootView.swift */,
+				70BF67CD2A7641A700AFB25F /* RootStore.swift */,
 			);
 			path = Application;
-			sourceTree = "<group>";
-		};
-		7000A9002A70C83300431275 /* Presentation */ = {
-			isa = PBXGroup;
-			children = (
-				7000A92E2A70F1FF00431275 /* Components */,
-				7000A9012A70C84700431275 /* TabBar */,
-				7000A90D2A70D2E300431275 /* Feed */,
-				7000A9252A70E37100431275 /* Question */,
-				7000A90E2A70D2EC00431275 /* MyPage */,
-			);
-			path = Presentation;
-			sourceTree = "<group>";
-		};
-		7000A9012A70C84700431275 /* TabBar */ = {
-			isa = PBXGroup;
-			children = (
-				7000A9092A70C9AD00431275 /* View */,
-				7000A90A2A70C9B000431275 /* ViewModel */,
-			);
-			path = TabBar;
 			sourceTree = "<group>";
 		};
 		7000A9042A70C89600431275 /* Domain */ = {
@@ -207,103 +205,61 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
-		7000A9092A70C9AD00431275 /* View */ = {
+		70BF67BC2A7573DF00AFB25F /* Config */ = {
 			isa = PBXGroup;
 			children = (
-				7000A9022A70C89200431275 /* TabBarView.swift */,
+				70BF67BA2A75732D00AFB25F /* Debug.xcconfig */,
+				70BF67BB2A75733A00AFB25F /* Release.xcconfig */,
 			);
-			path = View;
+			path = Config;
 			sourceTree = "<group>";
 		};
-		7000A90A2A70C9B000431275 /* ViewModel */ = {
+		70BF67C52A76410300AFB25F /* Feature */ = {
 			isa = PBXGroup;
 			children = (
-				7000A90B2A70C9C000431275 /* TabBarViewModel.swift */,
+				70BF67C62A76411A00AFB25F /* MainTab */,
+				70BF67D12A76434400AFB25F /* MyPage */,
+				70BF67CF2A76433C00AFB25F /* Feed */,
+				70BF67D02A76434100AFB25F /* Question */,
+				707058602A775CAD00B4F63F /* ContentController.swift */,
 			);
-			path = ViewModel;
+			path = Feature;
 			sourceTree = "<group>";
 		};
-		7000A90D2A70D2E300431275 /* Feed */ = {
+		70BF67C62A76411A00AFB25F /* MainTab */ = {
 			isa = PBXGroup;
 			children = (
-				7000A90F2A70DBF100431275 /* View */,
-				7000A9112A70DBF800431275 /* ViewModel */,
+				70BF67C72A76412300AFB25F /* MainTabView.swift */,
+				70BF67C92A76415000AFB25F /* MainTabStore.swift */,
+			);
+			path = MainTab;
+			sourceTree = "<group>";
+		};
+		70BF67CF2A76433C00AFB25F /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				70BF67D62A76435F00AFB25F /* FeedView.swift */,
+				70BF67E22A76439E00AFB25F /* FeedStore.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
 		};
-		7000A90E2A70D2EC00431275 /* MyPage */ = {
+		70BF67D02A76434100AFB25F /* Question */ = {
 			isa = PBXGroup;
 			children = (
-				7000A9102A70DBF500431275 /* View */,
-				7000A91E2A70E14000431275 /* ViewModel */,
-			);
-			path = MyPage;
-			sourceTree = "<group>";
-		};
-		7000A90F2A70DBF100431275 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				7000A9162A70DC2D00431275 /* FeedView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		7000A9102A70DBF500431275 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				7000A9212A70E15F00431275 /* MyPageView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		7000A9112A70DBF800431275 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				7000A9142A70DC0D00431275 /* FeedViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		7000A91E2A70E14000431275 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				7000A9232A70E16900431275 /* MyPageViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		7000A9252A70E37100431275 /* Question */ = {
-			isa = PBXGroup;
-			children = (
-				7000A9262A70E37F00431275 /* View */,
-				7000A9272A70E38200431275 /* ViewModel */,
+				70BF67DA2A76436F00AFB25F /* QuestionView.swift */,
+				70BF67E02A76439A00AFB25F /* QuestionStore.swift */,
 			);
 			path = Question;
 			sourceTree = "<group>";
 		};
-		7000A9262A70E37F00431275 /* View */ = {
+		70BF67D12A76434400AFB25F /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
-				7000A92C2A70E3C400431275 /* QuestionView.swift */,
+				70BF67D82A76436900AFB25F /* MyPageView.swift */,
+				70BF67E42A7643A400AFB25F /* MyPageStore.swift */,
 			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		7000A9272A70E38200431275 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				7000A92A2A70E3A100431275 /* QuestionViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		7000A92E2A70F1FF00431275 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				7000A92F2A70F20C00431275 /* WebView.swift */,
-			);
-			path = Components;
+			path = MyPage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,6 +278,9 @@
 			dependencies = (
 			);
 			name = "Draw-iOS";
+			packageProductDependencies = (
+				70BF67C32A7640A200AFB25F /* ComposableArchitecture */,
+			);
 			productName = "Draw-iOS";
 			productReference = 7000A8CF2A70C6B800431275 /* Draw-iOS.app */;
 			productType = "com.apple.product-type.application";
@@ -394,6 +353,9 @@
 				Base,
 			);
 			mainGroup = 7000A8C62A70C6B800431275;
+			packageReferences = (
+				70BF67C22A7640A200AFB25F /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = 7000A8D02A70C6B800431275 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -436,17 +398,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7000A92D2A70E3C400431275 /* QuestionView.swift in Sources */,
-				7000A9222A70E15F00431275 /* MyPageView.swift in Sources */,
-				7000A90C2A70C9C000431275 /* TabBarViewModel.swift in Sources */,
-				7000A92B2A70E3A100431275 /* QuestionViewModel.swift in Sources */,
-				7000A9152A70DC0D00431275 /* FeedViewModel.swift in Sources */,
-				7000A9082A70C97200431275 /* AppDIContainer.swift in Sources */,
-				7000A9032A70C89200431275 /* TabBarView.swift in Sources */,
-				7000A9172A70DC2D00431275 /* FeedView.swift in Sources */,
+				70BF67CA2A76415000AFB25F /* MainTabStore.swift in Sources */,
+				70BF67CE2A7641A700AFB25F /* RootStore.swift in Sources */,
+				70BF67D92A76436900AFB25F /* MyPageView.swift in Sources */,
+				70BF67BE2A75743000AFB25F /* Bundle+Extension.swift in Sources */,
+				70BF67C12A75767000AFB25F /* Url+Extension.swift in Sources */,
+				70BF67D72A76435F00AFB25F /* FeedView.swift in Sources */,
+				70BF67CC2A76419900AFB25F /* RootView.swift in Sources */,
+				70BF67DB2A76436F00AFB25F /* QuestionView.swift in Sources */,
+				70BF67E12A76439A00AFB25F /* QuestionStore.swift in Sources */,
+				70BF67E52A7643A400AFB25F /* MyPageStore.swift in Sources */,
 				7000A8D32A70C6B800431275 /* RootApp.swift in Sources */,
-				7000A9242A70E16900431275 /* MyPageViewModel.swift in Sources */,
-				7000A9302A70F20C00431275 /* WebView.swift in Sources */,
+				70BF67C82A76412300AFB25F /* MainTabView.swift in Sources */,
+				70BF67E32A76439E00AFB25F /* FeedStore.swift in Sources */,
+				707058612A775CAD00B4F63F /* ContentController.swift in Sources */,
+				7070585F2A764B9F00B4F63F /* WebView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,6 +451,7 @@
 /* Begin XCBuildConfiguration section */
 		7000A8F12A70C6B900431275 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70BF67BA2A75732D00AFB25F /* Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -545,6 +512,7 @@
 		};
 		7000A8F22A70C6B900431275 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70BF67BB2A75733A00AFB25F /* Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -599,6 +567,7 @@
 		};
 		7000A8F42A70C6B900431275 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70BF67BA2A75732D00AFB25F /* Debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -608,6 +577,7 @@
 				DEVELOPMENT_TEAM = X64MATB2CC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Draw-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -632,6 +602,7 @@
 		};
 		7000A8F52A70C6B900431275 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70BF67BB2A75733A00AFB25F /* Release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -641,6 +612,7 @@
 				DEVELOPMENT_TEAM = X64MATB2CC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Draw-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -665,6 +637,7 @@
 		};
 		7000A8F72A70C6B900431275 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70BF67BA2A75732D00AFB25F /* Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -685,6 +658,7 @@
 		};
 		7000A8F82A70C6B900431275 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70BF67BB2A75733A00AFB25F /* Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -705,6 +679,7 @@
 		};
 		7000A8FA2A70C6B900431275 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70BF67BA2A75732D00AFB25F /* Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -723,6 +698,7 @@
 		};
 		7000A8FB2A70C6B900431275 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70BF67BB2A75733A00AFB25F /* Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -779,6 +755,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		70BF67C22A7640A200AFB25F /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.57.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		70BF67C32A7640A200AFB25F /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 70BF67C22A7640A200AFB25F /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7000A8C72A70C6B800431275 /* Project object */;
 }

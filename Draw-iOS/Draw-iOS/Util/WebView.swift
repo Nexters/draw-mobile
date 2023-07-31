@@ -9,10 +9,18 @@ import SwiftUI
 import WebKit
 
 struct WebView: UIViewRepresentable {
+    let webView = WKWebView()
     let url: URL
     
+    init(url: URL) {
+        self.url = url
+        self.webView.configuration.userContentController.add(ContentController(), name: "showBottomBar")
+        self.webView.configuration.userContentController.add(ContentController(), name: "showShareSheet")
+    }
+    
     func makeUIView(context: Context) -> WKWebView {
-        let webView = WKWebView()
+        let request = URLRequest(url: url)
+        webView.load(request)
         
         webView.isOpaque = false
         webView.backgroundColor = .clear
@@ -22,8 +30,6 @@ struct WebView: UIViewRepresentable {
     }
     
     func updateUIView(_ webView: WKWebView, context: Context) {
-
-        let request = URLRequest(url: url)
-        webView.load(request)
+        
     }
 }
