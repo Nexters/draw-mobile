@@ -13,6 +13,9 @@
 		7000A8E42A70C6B900431275 /* Draw_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7000A8E32A70C6B900431275 /* Draw_iOSTests.swift */; };
 		7000A8EE2A70C6B900431275 /* Draw_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7000A8ED2A70C6B900431275 /* Draw_iOSUITests.swift */; };
 		7000A8F02A70C6B900431275 /* Draw_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7000A8EF2A70C6B900431275 /* Draw_iOSUITestsLaunchTests.swift */; };
+		7053330F2A777B2300925CD9 /* WebMessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7053330E2A777B2300925CD9 /* WebMessageHandler.swift */; };
+		705333192A777D9700925CD9 /* NotificationCenter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705333182A777D9700925CD9 /* NotificationCenter+Extension.swift */; };
+		7053331B2A77805200925CD9 /* WebMessageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7053331A2A77805200925CD9 /* WebMessageType.swift */; };
 		7070585F2A764B9F00B4F63F /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7070585E2A764B9F00B4F63F /* WebView.swift */; };
 		707058612A775CAD00B4F63F /* ContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707058602A775CAD00B4F63F /* ContentController.swift */; };
 		70BF67BE2A75743000AFB25F /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BF67BD2A75743000AFB25F /* Bundle+Extension.swift */; };
@@ -57,6 +60,9 @@
 		7000A8E92A70C6B900431275 /* Draw-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Draw-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7000A8ED2A70C6B900431275 /* Draw_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Draw_iOSUITests.swift; sourceTree = "<group>"; };
 		7000A8EF2A70C6B900431275 /* Draw_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Draw_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7053330E2A777B2300925CD9 /* WebMessageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebMessageHandler.swift; sourceTree = "<group>"; };
+		705333182A777D9700925CD9 /* NotificationCenter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationCenter+Extension.swift"; sourceTree = "<group>"; };
+		7053331A2A77805200925CD9 /* WebMessageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebMessageType.swift; sourceTree = "<group>"; };
 		7070585E2A764B9F00B4F63F /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		707058602A775CAD00B4F63F /* ContentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentController.swift; sourceTree = "<group>"; };
 		70BF67BA2A75732D00AFB25F /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
@@ -131,7 +137,8 @@
 				70BF67C52A76410300AFB25F /* Feature */,
 				7000A9052A70C8A600431275 /* Data */,
 				7000A9042A70C89600431275 /* Domain */,
-				7000A8FE2A70C7FD00431275 /* Util */,
+				705333132A777C2A00925CD9 /* Core */,
+				7000A8FE2A70C7FD00431275 /* Shared */,
 				7000A8FC2A70C7C400431275 /* Resources */,
 				7000A8D82A70C6B900431275 /* Preview Content */,
 			);
@@ -171,14 +178,12 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		7000A8FE2A70C7FD00431275 /* Util */ = {
+		7000A8FE2A70C7FD00431275 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				7070585E2A764B9F00B4F63F /* WebView.swift */,
-				70BF67BD2A75743000AFB25F /* Bundle+Extension.swift */,
-				70BF67C02A75767000AFB25F /* Url+Extension.swift */,
+				705333102A777BD800925CD9 /* Extension */,
 			);
-			path = Util;
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		7000A8FF2A70C80B00431275 /* Application */ = {
@@ -203,6 +208,42 @@
 			children = (
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		705333102A777BD800925CD9 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				70BF67BD2A75743000AFB25F /* Bundle+Extension.swift */,
+				70BF67C02A75767000AFB25F /* Url+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		705333132A777C2A00925CD9 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				705333172A777C8F00925CD9 /* NotificationCenter */,
+				705333142A777C3400925CD9 /* WebKit */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		705333142A777C3400925CD9 /* WebKit */ = {
+			isa = PBXGroup;
+			children = (
+				7053331A2A77805200925CD9 /* WebMessageType.swift */,
+				7053330E2A777B2300925CD9 /* WebMessageHandler.swift */,
+				7070585E2A764B9F00B4F63F /* WebView.swift */,
+			);
+			path = WebKit;
+			sourceTree = "<group>";
+		};
+		705333172A777C8F00925CD9 /* NotificationCenter */ = {
+			isa = PBXGroup;
+			children = (
+				705333182A777D9700925CD9 /* NotificationCenter+Extension.swift */,
+			);
+			path = NotificationCenter;
 			sourceTree = "<group>";
 		};
 		70BF67BC2A7573DF00AFB25F /* Config */ = {
@@ -401,6 +442,8 @@
 				70BF67CA2A76415000AFB25F /* MainTabStore.swift in Sources */,
 				70BF67CE2A7641A700AFB25F /* RootStore.swift in Sources */,
 				70BF67D92A76436900AFB25F /* MyPageView.swift in Sources */,
+				705333192A777D9700925CD9 /* NotificationCenter+Extension.swift in Sources */,
+				7053330F2A777B2300925CD9 /* WebMessageHandler.swift in Sources */,
 				70BF67BE2A75743000AFB25F /* Bundle+Extension.swift in Sources */,
 				70BF67C12A75767000AFB25F /* Url+Extension.swift in Sources */,
 				70BF67D72A76435F00AFB25F /* FeedView.swift in Sources */,
@@ -410,6 +453,7 @@
 				70BF67E52A7643A400AFB25F /* MyPageStore.swift in Sources */,
 				7000A8D32A70C6B800431275 /* RootApp.swift in Sources */,
 				70BF67C82A76412300AFB25F /* MainTabView.swift in Sources */,
+				7053331B2A77805200925CD9 /* WebMessageType.swift in Sources */,
 				70BF67E32A76439E00AFB25F /* FeedStore.swift in Sources */,
 				707058612A775CAD00B4F63F /* ContentController.swift in Sources */,
 				7070585F2A764B9F00B4F63F /* WebView.swift in Sources */,

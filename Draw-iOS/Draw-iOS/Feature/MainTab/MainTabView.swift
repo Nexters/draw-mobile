@@ -12,6 +12,9 @@ import ComposableArchitecture
 struct MainTabView: View {
     let store: StoreOf<MainTabViewStore>
     
+    let showBottomBarPublisher = NotificationCenter.default.publisher(for: .showBottomBar)
+    let showShareSheetPublisher = NotificationCenter.default.publisher(for: .showShareSheet)
+    
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
             ZStack {
@@ -30,7 +33,14 @@ struct MainTabView: View {
                 )
                 .opacity(viewStore.state.currentScene == .myPage ? 1 : 0)
                 
-                tabBarView(viewStore: viewStore)
+                if viewStore.state.isShowTabBar {
+                    tabBarView(viewStore: viewStore)
+                }
+            }
+            .onReceive(showBottomBarPublisher) { value in
+                if let isShow = value.userInfo?[NotificationKey.showBottomBar] as? Bool {
+                    viewStore.send(.showTabBar(isShow))
+                }
             }
             .background(Color("ColorBackgroundWhite"))
             .ignoresSafeArea()
