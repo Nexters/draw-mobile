@@ -42,6 +42,15 @@ struct MainTabView: View {
                     viewStore.send(.showTabBar(isShow))
                 }
             }
+            .sheet(
+              isPresented: viewStore.binding(
+                get: \.isShareSheetPresented,
+                send: MainTabViewStore.Action.setShareSheet(isPresented:)
+              )
+            ) {
+                ActivityViewController(url: .feedDetail)
+                    .presentationDetents([.medium])
+            }
             .background(Color("ColorBackgroundWhite"))
             .ignoresSafeArea()
         }
