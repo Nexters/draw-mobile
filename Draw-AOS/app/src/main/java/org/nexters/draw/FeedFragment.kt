@@ -1,11 +1,9 @@
 package org.nexters.draw
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.webkit.WebChromeClient
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import org.nexters.draw.databinding.FragmentFeedBinding
@@ -23,24 +21,23 @@ class FeedFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        // Inflate the layout for this fragment
         _binding = FragmentFeedBinding.inflate(inflater, container, false)
         return binding.root
     }
 
-    @SuppressLint("SetJavaScriptEnabled")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         binding.wbDraw.apply {
-            webChromeClient = WebChromeClient()
-            webViewClient = DrawWebViewClient()
-            settings.javaScriptEnabled = true
-            settings.domStorageEnabled = true
-            settings.setSupportMultipleWindows(true)
-            loadUrl(BuildConfig.WEB_URL_FEED)
+            DrawWebViewClient.run {
+                initWebView(this@apply)
+                loadWebUrl(this@apply, BuildConfig.WEB_URL_FEED)
+            }
+            addJavascriptInterface(
+                JavascriptInterface(mainViewModel, requireContext()),
+                "draw"
+            )
         }
-        binding.wbDraw.addJavascriptInterface(JavascriptInterface(mainViewModel,requireContext()), "draw")
     }
 
     override fun onDestroyView() {
