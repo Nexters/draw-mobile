@@ -9,6 +9,8 @@ import SwiftUI
 
 @main
 struct RootApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
     var body: some Scene {
         WindowGroup {
             RootView(store: .init(initialState: .mainTab(.init()), reducer: RootStore()._printChanges()))
