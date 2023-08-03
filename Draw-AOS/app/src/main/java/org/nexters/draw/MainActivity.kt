@@ -1,5 +1,6 @@
 package org.nexters.draw
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
@@ -19,8 +20,16 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.navView.background = null
+        initFabBtn()
         initNavigation()
         initBottomNavigation()
+    }
+
+    private fun initFabBtn() {
+        binding.ftnFeed.setOnClickListener {
+            startActivity(Intent(this,NewQuestionActivity::class.java))
+
+        }
     }
 
     private fun initBottomNavigation() {

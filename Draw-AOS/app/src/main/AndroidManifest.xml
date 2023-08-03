@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Draw"
         tools:targetApi="31">
         <activity
+            android:name=".NewQuestionActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity

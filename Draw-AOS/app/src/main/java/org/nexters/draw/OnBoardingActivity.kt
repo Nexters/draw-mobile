@@ -1,15 +1,13 @@
 package org.nexters.draw
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.view.ViewTreeObserver
-import android.webkit.WebChromeClient
 import android.webkit.WebView
+import android.webkit.WebViewClient
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import org.nexters.draw.databinding.ActivityOnboardingBinding
 
@@ -23,7 +21,9 @@ class OnBoardingActivity : AppCompatActivity() {
         installSplashScreen()
         binding = ActivityOnboardingBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         initWebView()
+
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.S) {
             binding.ivLogo.visibility = View.VISIBLE
             binding.wbDraw.visibility = View.GONE
@@ -44,7 +44,7 @@ class OnBoardingActivity : AppCompatActivity() {
                 }
             )
 
-            splashScreen.setOnExitAnimationListener {splashScreenView->
+            splashScreen.setOnExitAnimationListener { splashScreenView ->
                 splashScreenView.remove()
                 binding.ivLogo.visibility = View.GONE
             }
@@ -52,11 +52,15 @@ class OnBoardingActivity : AppCompatActivity() {
 
     }
 
-    @SuppressLint("SetJavaScriptEnabled")
     private fun initWebView() {
         binding.wbDraw.apply {
-            webChromeClient = WebChromeClient()
-            webViewClient = object : DrawWebViewClient() {
+
+            DrawWebViewClient.run {
+                initWebView(this@apply)
+                loadWebUrl(this@apply, BuildConfig.WEB_URL_ONBOARDING)
+            }
+
+            webViewClient = object : WebViewClient() {
                 override fun doUpdateVisitedHistory(
                     view: WebView?,
                     url: String?,
@@ -65,8 +69,7 @@ class OnBoardingActivity : AppCompatActivity() {
                     super.doUpdateVisitedHistory(view, url, isReload)
                     if (url == BuildConfig.WEB_URL_FEED) {
                         finish()
-                        val intent = Intent(view?.context, MainActivity::class.java)
-                        ContextCompat.startActivity(view?.context!!, intent, null)
+                        startActivity(Intent(this@OnBoardingActivity, MainActivity::class.java))
                     }
 
                 }
@@ -82,10 +85,6 @@ class OnBoardingActivity : AppCompatActivity() {
                 }
             }
 
-            settings.javaScriptEnabled = true
-            settings.domStorageEnabled = true
-            settings.setSupportMultipleWindows(true)
-            loadUrl(BuildConfig.WEB_URL_ONBOARDING)
         }
     }
 
