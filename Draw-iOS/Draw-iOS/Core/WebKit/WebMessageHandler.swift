@@ -22,6 +22,10 @@ class WebMessageHandler: NSObject, WKScriptMessageHandler {
             guard let value = message.body as? String else { break }
             NotificationCenterManager.send(.showShareSheet, value: value == "true")
             
+        case WebMessageType.navigate.rawValue:
+            print(message.body)
+            break
+            
         default:
             break
         }

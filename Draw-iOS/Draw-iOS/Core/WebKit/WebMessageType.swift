@@ -10,4 +10,5 @@ import Foundation
 public enum WebMessageType: String, CaseIterable {
     case showBottomBar
     case showShareSheet
+    case navigate
 }
