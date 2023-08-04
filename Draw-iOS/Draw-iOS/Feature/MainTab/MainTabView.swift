@@ -15,26 +15,21 @@ struct MainTabView: View {
     let showBottomBarPublisher = NotificationCenter.default.publisher(for: .showBottomBar)
     let showShareSheetPublisher = NotificationCenter.default.publisher(for: .showShareSheet)
     
+    let webView = WebView(url: URL(string: "https://deploy-preview-31--draw-nexters.netlify.app/")!)
+    
     var body: some View {
+        
         WithViewStore(self.store, observe: { $0 }) { viewStore in
             ZStack {
-                FeedView(
-                    store: self.store.scope(state: \.feed, action: { .feed($0) })
-                )
-                .opacity(viewStore.state.currentScene == .feed ? 1 : 0)
+                webView
                 
-                QuestionView(
-                    store: self.store.scope(state: \.question, action: { .question($0) })
-                )
-                .opacity(viewStore.state.currentScene == .question ? 1 : 0)
-                
-                MyPageView(
-                    store: self.store.scope(state: \.myPage, action: { .myPage($0) })
-                )
-                .opacity(viewStore.state.currentScene == .myPage ? 1 : 0)
-                
-                if viewStore.state.isShowTabBar {
-                    tabBarView(viewStore: viewStore)
+                tabBarView(viewStore: viewStore)
+            }
+            .onChange(of: viewStore.currentScene) { scene in
+                webView.send(type: .navigate(scene)) { _, errorOrNil in
+                    if let error = errorOrNil {
+                        print(error)
+                    }
                 }
             }
             .onReceive(showBottomBarPublisher) { value in

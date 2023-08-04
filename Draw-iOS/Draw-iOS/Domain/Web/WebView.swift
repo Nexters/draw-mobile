@@ -9,27 +9,22 @@ import SwiftUI
 import WebKit
 
 struct WebView: UIViewRepresentable {
-    let webView: WKWebView
+    let webView: WKWebView = .init()
     let url: URL
     
     init(url: URL) {
         self.url = url
         
-        let configuration = WKWebViewConfiguration()
-        let js = "window.addEventListener('load', () => { const navigateEvent = new CustomEvent('navigate', { detail: { url: '/feed' }}); window.dispatchEvent(navigateEvent); })"
-        
-        let userScript = WKUserScript(source: js, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
-        let contentController = WKUserContentController()
-        
-        contentController.addUserScript(userScript)
-        configuration.userContentController = contentController
-
-        webView = WKWebView(frame: .zero, configuration: configuration)
-        
-        WebMessageType.allCases.forEach { webMessageType in
+        WebMessageReceiveType.allCases.forEach { webMessageType in
             self.webView.configuration.userContentController.add(WebMessageHandler(), name: webMessageType.rawValue)
         }
-        
+    }
+    
+    func send(type: WebMessageSendType, completionHandler: @escaping (Any?, Error?) -> Void) {
+        print(type.jsCode)
+        webView.evaluateJavaScript(type.jsCode) {
+            completionHandler($0, $1)
+        }
     }
     
     func makeUIView(context: Context) -> WKWebView {

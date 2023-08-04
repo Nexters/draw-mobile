@@ -9,12 +9,6 @@ import Foundation
 
 import ComposableArchitecture
 
-enum MainScene: Hashable {
-    case feed
-    case question
-    case myPage
-}
-
 struct MainTabViewStore: ReducerProtocol {
 
     struct State: Equatable {

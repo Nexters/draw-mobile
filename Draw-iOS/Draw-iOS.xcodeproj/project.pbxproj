@@ -13,9 +13,12 @@
 		7000A8E42A70C6B900431275 /* Draw_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7000A8E32A70C6B900431275 /* Draw_iOSTests.swift */; };
 		7000A8EE2A70C6B900431275 /* Draw_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7000A8ED2A70C6B900431275 /* Draw_iOSUITests.swift */; };
 		7000A8F02A70C6B900431275 /* Draw_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7000A8EF2A70C6B900431275 /* Draw_iOSUITestsLaunchTests.swift */; };
+		7038E2CE2A7D3C9B0036756C /* WebMessageSendType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7038E2CD2A7D3C9B0036756C /* WebMessageSendType.swift */; };
+		7038E2D02A7D44690036756C /* WebPathType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7038E2CF2A7D44690036756C /* WebPathType.swift */; };
+		7038E2D32A7D46900036756C /* MainScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7038E2D22A7D46900036756C /* MainScene.swift */; };
 		7053330F2A777B2300925CD9 /* WebMessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7053330E2A777B2300925CD9 /* WebMessageHandler.swift */; };
 		705333192A777D9700925CD9 /* NotificationCenter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705333182A777D9700925CD9 /* NotificationCenter+Extension.swift */; };
-		7053331B2A77805200925CD9 /* WebMessageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7053331A2A77805200925CD9 /* WebMessageType.swift */; };
+		7053331B2A77805200925CD9 /* WebMessageReceiveType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7053331A2A77805200925CD9 /* WebMessageReceiveType.swift */; };
 		7070585F2A764B9F00B4F63F /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7070585E2A764B9F00B4F63F /* WebView.swift */; };
 		707058612A775CAD00B4F63F /* ContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707058602A775CAD00B4F63F /* ContentController.swift */; };
 		7087F96F2A778A9400760EE3 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7087F96E2A778A9400760EE3 /* ActivityViewController.swift */; };
@@ -64,9 +67,12 @@
 		7000A8E92A70C6B900431275 /* Draw-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Draw-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7000A8ED2A70C6B900431275 /* Draw_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Draw_iOSUITests.swift; sourceTree = "<group>"; };
 		7000A8EF2A70C6B900431275 /* Draw_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Draw_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7038E2CD2A7D3C9B0036756C /* WebMessageSendType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebMessageSendType.swift; sourceTree = "<group>"; };
+		7038E2CF2A7D44690036756C /* WebPathType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebPathType.swift; sourceTree = "<group>"; };
+		7038E2D22A7D46900036756C /* MainScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScene.swift; sourceTree = "<group>"; };
 		7053330E2A777B2300925CD9 /* WebMessageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebMessageHandler.swift; sourceTree = "<group>"; };
 		705333182A777D9700925CD9 /* NotificationCenter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationCenter+Extension.swift"; sourceTree = "<group>"; };
-		7053331A2A77805200925CD9 /* WebMessageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebMessageType.swift; sourceTree = "<group>"; };
+		7053331A2A77805200925CD9 /* WebMessageReceiveType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebMessageReceiveType.swift; sourceTree = "<group>"; };
 		7070585E2A764B9F00B4F63F /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		707058602A775CAD00B4F63F /* ContentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentController.swift; sourceTree = "<group>"; };
 		7087F96E2A778A9400760EE3 /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
@@ -211,6 +217,8 @@
 		7000A9042A70C89600431275 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				7038E2D12A7D46850036756C /* Tab */,
+				705333142A777C3400925CD9 /* Web */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -220,6 +228,14 @@
 			children = (
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		7038E2D12A7D46850036756C /* Tab */ = {
+			isa = PBXGroup;
+			children = (
+				7038E2D22A7D46900036756C /* MainScene.swift */,
+			);
+			path = Tab;
 			sourceTree = "<group>";
 		};
 		705333102A777BD800925CD9 /* Extension */ = {
@@ -236,19 +252,20 @@
 			children = (
 				7087F96D2A778A7200760EE3 /* UIKit */,
 				705333172A777C8F00925CD9 /* NotificationCenter */,
-				705333142A777C3400925CD9 /* WebKit */,
 			);
 			path = Core;
 			sourceTree = "<group>";
 		};
-		705333142A777C3400925CD9 /* WebKit */ = {
+		705333142A777C3400925CD9 /* Web */ = {
 			isa = PBXGroup;
 			children = (
-				7053331A2A77805200925CD9 /* WebMessageType.swift */,
+				7038E2CF2A7D44690036756C /* WebPathType.swift */,
+				7053331A2A77805200925CD9 /* WebMessageReceiveType.swift */,
+				7038E2CD2A7D3C9B0036756C /* WebMessageSendType.swift */,
 				7053330E2A777B2300925CD9 /* WebMessageHandler.swift */,
 				7070585E2A764B9F00B4F63F /* WebView.swift */,
 			);
-			path = WebKit;
+			path = Web;
 			sourceTree = "<group>";
 		};
 		705333172A777C8F00925CD9 /* NotificationCenter */ = {
@@ -478,10 +495,13 @@
 				70BF67E52A7643A400AFB25F /* MyPageStore.swift in Sources */,
 				7000A8D32A70C6B800431275 /* RootApp.swift in Sources */,
 				70BF67C82A76412300AFB25F /* MainTabView.swift in Sources */,
-				7053331B2A77805200925CD9 /* WebMessageType.swift in Sources */,
+				7053331B2A77805200925CD9 /* WebMessageReceiveType.swift in Sources */,
+				7038E2D02A7D44690036756C /* WebPathType.swift in Sources */,
+				7038E2CE2A7D3C9B0036756C /* WebMessageSendType.swift in Sources */,
 				70BF67E32A76439E00AFB25F /* FeedStore.swift in Sources */,
 				7087F96F2A778A9400760EE3 /* ActivityViewController.swift in Sources */,
 				707058612A775CAD00B4F63F /* ContentController.swift in Sources */,
+				7038E2D32A7D46900036756C /* MainScene.swift in Sources */,
 				7070585F2A764B9F00B4F63F /* WebView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
