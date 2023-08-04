@@ -27,6 +27,7 @@ enum WebMessageSendType: CaseIterable {
 extension WebMessageSendType {
     private func navigateJSCode(path: WebPathType) -> String {
         return "const navigateEvent = new CustomEvent('navigate', { detail: { url: '\(path.rawValue)' }}); window.dispatchEvent(navigateEvent);"
-        return "window.addEventListener('load', () => { const navigateEvent = new CustomEvent('navigate', { detail: { url: '\(path.rawValue)' }}); window.dispatchEvent(navigateEvent); });"
+        // FIXME: 이 코드 부분이 잘못 되었을 가능성이 있습니다. (23.08.05)
+//        return "window.addEventListener('load', () => { const navigateEvent = new CustomEvent('navigate', { detail: { url: '\(path.rawValue)' }}); window.dispatchEvent(navigateEvent); });"
     }
 }
