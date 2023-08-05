@@ -14,7 +14,7 @@ struct MainTabViewStore: ReducerProtocol {
     struct State: Equatable {
         var currentScene: MainScene = .onboarding
         
-        var isShowTabBar: Bool = true
+        var isShowTabBar: Bool = false
         var isShareSheetPresented: Bool = false
         
         var feed: FeedStore.State = .init()

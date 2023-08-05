@@ -15,15 +15,16 @@ struct MainTabView: View {
     let showBottomBarPublisher = NotificationCenter.default.publisher(for: .showBottomBar)
     let showShareSheetPublisher = NotificationCenter.default.publisher(for: .showShareSheet)
     
-    let webView = WebView(url: URL(string: "https://deploy-preview-31--draw-nexters.netlify.app/")!)
+    let webView = WebView(url: .feed)
     
     var body: some View {
-        
         WithViewStore(self.store, observe: { $0 }) { viewStore in
             ZStack {
                 webView
                 
-                tabBarView(viewStore: viewStore)
+                if viewStore.isShowTabBar {
+                    tabBarView(viewStore: viewStore)
+                }
             }
             .onChange(of: viewStore.currentScene) { scene in
                 webView.send(type: .navigate(scene)) { _, errorOrNil in
