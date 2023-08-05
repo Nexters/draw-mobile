@@ -40,12 +40,6 @@ struct MainTabViewStore: ReducerProtocol {
         Reduce { state, action in
             switch action {
             case let .selectTab(scene):
-                switch scene {
-                case .question:
-                    state.isShowTabBar = false
-                    
-                default: break
-                }
                 state.currentScene = scene
                 
                 return .none

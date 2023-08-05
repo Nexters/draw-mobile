@@ -44,8 +44,12 @@ struct MainTabView: View {
                 send: MainTabViewStore.Action.setShareSheet(isPresented:)
               )
             ) {
-                ActivityViewController(url: .feedDetail)
-                    .presentationDetents([.medium])
+                if #available(iOS 16.0, *) {
+                    ActivityViewController(url: .feedDetail)
+                        .presentationDetents([.medium])
+                } else {
+                    ActivityViewController(url: .feedDetail)
+                }
             }
             .background(Color("ColorBackgroundWhite"))
             .ignoresSafeArea()

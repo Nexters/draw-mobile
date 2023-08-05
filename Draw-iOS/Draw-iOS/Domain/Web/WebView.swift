@@ -32,7 +32,7 @@ struct WebView: UIViewRepresentable {
         
         webView.isOpaque = false
         webView.backgroundColor = .clear
-        webView.scrollView.isScrollEnabled = false
+//        webView.scrollView.isScrollEnabled = false
         
         return webView
     }
