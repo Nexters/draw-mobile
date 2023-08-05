@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "180861695102",
+    "project_id": "draw-c83d0",
+    "storage_bucket": "draw-c83d0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:180861695102:android:65715a06e389abfc3bd42f",
+        "android_client_info": {
+          "package_name": "org.nexters.draw"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "180861695102-q2ehgjsb6ashdj1g777ek9o10k29cngr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKFRZkann95IIZWl0mA8kIQ9HTrifgL9o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "180861695102-q2ehgjsb6ashdj1g777ek9o10k29cngr.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "180861695102-8g2h59e6m7n05dmvm04ktvgtp58v8kdg.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.nexters.drawyourcard"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
