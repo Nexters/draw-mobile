@@ -7,8 +7,7 @@
 
 import Foundation
 
-public enum WebMessageType: String, CaseIterable {
+public enum WebMessageReceiveType: String, CaseIterable {
     case showBottomBar
     case showShareSheet
-    case navigate
 }

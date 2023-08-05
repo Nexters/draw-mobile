@@ -13,7 +13,7 @@ struct FeedView: View {
     let store: StoreOf<FeedStore>
     
     var body: some View {
-        WebView(url: URL(string: "https://deploy-preview-31--draw-nexters.netlify.app/")!)
+        WebView(url: .feed)
     }
 }
 

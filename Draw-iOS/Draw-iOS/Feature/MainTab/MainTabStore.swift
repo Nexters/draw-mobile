@@ -9,18 +9,12 @@ import Foundation
 
 import ComposableArchitecture
 
-enum MainScene: Hashable {
-    case feed
-    case question
-    case myPage
-}
-
 struct MainTabViewStore: ReducerProtocol {
 
     struct State: Equatable {
-        var currentScene: MainScene = .feed
+        var currentScene: MainScene = .onboarding
         
-        var isShowTabBar: Bool = true
+        var isShowTabBar: Bool = false
         var isShareSheetPresented: Bool = false
         
         var feed: FeedStore.State = .init()
@@ -46,12 +40,6 @@ struct MainTabViewStore: ReducerProtocol {
         Reduce { state, action in
             switch action {
             case let .selectTab(scene):
-                switch scene {
-                case .question:
-                    state.isShowTabBar = false
-                    
-                default: break
-                }
                 state.currentScene = scene
                 
                 return .none
