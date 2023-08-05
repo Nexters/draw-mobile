@@ -12,7 +12,7 @@ import ComposableArchitecture
 struct MainTabViewStore: ReducerProtocol {
 
     struct State: Equatable {
-        var currentScene: MainScene = .feed
+        var currentScene: MainScene = .onboarding
         
         var isShowTabBar: Bool = true
         var isShareSheetPresented: Bool = false

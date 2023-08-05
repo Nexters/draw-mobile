@@ -8,6 +8,7 @@
 import Foundation
 
 enum MainScene: Hashable, CaseIterable {
+    case onboarding
     case feed
     case question
     case myPage
