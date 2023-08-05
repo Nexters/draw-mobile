@@ -4,13 +4,13 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class MainViewModel:ViewModel() {
+class MainViewModel : ViewModel() {
 
 
-    private var _isBottomBarVisible = MutableLiveData(true)
+    private var _isBottomBarVisible = MutableLiveData(false)
     val isBottomBarVisible: LiveData<Boolean> = _isBottomBarVisible
 
-    fun setBottomBarVisible(value:Boolean){
+    fun setBottomBarVisible(value: Boolean) {
         _isBottomBarVisible.postValue(value)
     }
 

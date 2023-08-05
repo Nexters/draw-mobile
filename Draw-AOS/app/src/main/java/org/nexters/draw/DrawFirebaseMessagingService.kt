@@ -15,14 +15,6 @@ import com.google.firebase.messaging.RemoteMessage
 class DrawFirebaseMessagingService : FirebaseMessagingService() {
 
 
-    override fun onNewToken(token: String) {
-        super.onNewToken(token)
-
-
-        //웹으로 토큰 전달
-
-    }
-
     override fun onMessageReceived(message: RemoteMessage) {
         super.onMessageReceived(message)
 
@@ -33,7 +25,7 @@ class DrawFirebaseMessagingService : FirebaseMessagingService() {
         if (message.data.isNotEmpty()) {
 
             sendNotification(message)
-        } 
+        }
 
 
     }
