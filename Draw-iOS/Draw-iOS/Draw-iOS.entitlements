@@ -4,5 +4,10 @@
 <dict>
 	<key>aps-environment</key>
 	<string>development</string>
+	<key>com.apple.developer.associated-domains</key>
+	<array>
+		<string>applinks:draw-nexters.netlify.app</string>
+		<string>webcredentials:draw-nexters.netlify.app</string>
+	</array>
 </dict>
 </plist>

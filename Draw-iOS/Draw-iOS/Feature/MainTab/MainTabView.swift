@@ -26,6 +26,9 @@ struct MainTabView: View {
                     tabBarView(viewStore: viewStore)
                 }
             }
+            .onOpenURL { url in
+                webView.update(url: url)
+            }
             .onChange(of: viewStore.currentScene) { scene in
                 webView.send(type: .navigate(scene)) { _, errorOrNil in
                     if let error = errorOrNil {
