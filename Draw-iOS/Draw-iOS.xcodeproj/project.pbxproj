@@ -20,8 +20,6 @@
 		705333192A777D9700925CD9 /* NotificationCenter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705333182A777D9700925CD9 /* NotificationCenter+Extension.swift */; };
 		7053331B2A77805200925CD9 /* WebMessageReceiveType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7053331A2A77805200925CD9 /* WebMessageReceiveType.swift */; };
 		7070585F2A764B9F00B4F63F /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7070585E2A764B9F00B4F63F /* WebView.swift */; };
-		707058612A775CAD00B4F63F /* ContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707058602A775CAD00B4F63F /* ContentController.swift */; };
-		7087F96F2A778A9400760EE3 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7087F96E2A778A9400760EE3 /* ActivityViewController.swift */; };
 		708F302C2A7A3EEC00152D0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708F302B2A7A3EEC00152D0E /* AppDelegate.swift */; };
 		708F302F2A7A40C700152D0E /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 708F302E2A7A40C700152D0E /* FirebaseMessaging */; };
 		708F30312A7A439000152D0E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 708F30302A7A439000152D0E /* GoogleService-Info.plist */; };
@@ -34,12 +32,6 @@
 		70BF67CA2A76415000AFB25F /* MainTabStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BF67C92A76415000AFB25F /* MainTabStore.swift */; };
 		70BF67CC2A76419900AFB25F /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BF67CB2A76419900AFB25F /* RootView.swift */; };
 		70BF67CE2A7641A700AFB25F /* RootStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BF67CD2A7641A700AFB25F /* RootStore.swift */; };
-		70BF67D72A76435F00AFB25F /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BF67D62A76435F00AFB25F /* FeedView.swift */; };
-		70BF67D92A76436900AFB25F /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BF67D82A76436900AFB25F /* MyPageView.swift */; };
-		70BF67DB2A76436F00AFB25F /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BF67DA2A76436F00AFB25F /* QuestionView.swift */; };
-		70BF67E12A76439A00AFB25F /* QuestionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BF67E02A76439A00AFB25F /* QuestionStore.swift */; };
-		70BF67E32A76439E00AFB25F /* FeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BF67E22A76439E00AFB25F /* FeedStore.swift */; };
-		70BF67E52A7643A400AFB25F /* MyPageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BF67E42A7643A400AFB25F /* MyPageStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,8 +68,6 @@
 		705333182A777D9700925CD9 /* NotificationCenter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationCenter+Extension.swift"; sourceTree = "<group>"; };
 		7053331A2A77805200925CD9 /* WebMessageReceiveType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebMessageReceiveType.swift; sourceTree = "<group>"; };
 		7070585E2A764B9F00B4F63F /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
-		707058602A775CAD00B4F63F /* ContentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentController.swift; sourceTree = "<group>"; };
-		7087F96E2A778A9400760EE3 /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		708F302B2A7A3EEC00152D0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		708F30302A7A439000152D0E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		70A7FC2D2A83F63E0001854D /* URLSharingStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSharingStore.swift; sourceTree = "<group>"; };
@@ -92,12 +82,6 @@
 		70BF67C92A76415000AFB25F /* MainTabStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabStore.swift; sourceTree = "<group>"; };
 		70BF67CB2A76419900AFB25F /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		70BF67CD2A7641A700AFB25F /* RootStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootStore.swift; sourceTree = "<group>"; };
-		70BF67D62A76435F00AFB25F /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
-		70BF67D82A76436900AFB25F /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
-		70BF67DA2A76436F00AFB25F /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
-		70BF67E02A76439A00AFB25F /* QuestionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionStore.swift; sourceTree = "<group>"; };
-		70BF67E22A76439E00AFB25F /* FeedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedStore.swift; sourceTree = "<group>"; };
-		70BF67E42A7643A400AFB25F /* MyPageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,7 +274,6 @@
 		70A7FC2C2A83F6110001854D /* ShareBottomSheet */ = {
 			isa = PBXGroup;
 			children = (
-				7087F96E2A778A9400760EE3 /* ActivityViewController.swift */,
 				70A7FC2D2A83F63E0001854D /* URLSharingStore.swift */,
 				70A7FC2F2A83F83F0001854D /* URLSharingView.swift */,
 			);
@@ -311,10 +294,6 @@
 			children = (
 				70A7FC2C2A83F6110001854D /* ShareBottomSheet */,
 				70BF67C62A76411A00AFB25F /* MainTab */,
-				70BF67D12A76434400AFB25F /* MyPage */,
-				70BF67CF2A76433C00AFB25F /* Feed */,
-				70BF67D02A76434100AFB25F /* Question */,
-				707058602A775CAD00B4F63F /* ContentController.swift */,
 			);
 			path = Feature;
 			sourceTree = "<group>";
@@ -326,33 +305,6 @@
 				70BF67C92A76415000AFB25F /* MainTabStore.swift */,
 			);
 			path = MainTab;
-			sourceTree = "<group>";
-		};
-		70BF67CF2A76433C00AFB25F /* Feed */ = {
-			isa = PBXGroup;
-			children = (
-				70BF67D62A76435F00AFB25F /* FeedView.swift */,
-				70BF67E22A76439E00AFB25F /* FeedStore.swift */,
-			);
-			path = Feed;
-			sourceTree = "<group>";
-		};
-		70BF67D02A76434100AFB25F /* Question */ = {
-			isa = PBXGroup;
-			children = (
-				70BF67DA2A76436F00AFB25F /* QuestionView.swift */,
-				70BF67E02A76439A00AFB25F /* QuestionStore.swift */,
-			);
-			path = Question;
-			sourceTree = "<group>";
-		};
-		70BF67D12A76434400AFB25F /* MyPage */ = {
-			isa = PBXGroup;
-			children = (
-				70BF67D82A76436900AFB25F /* MyPageView.swift */,
-				70BF67E42A7643A400AFB25F /* MyPageStore.swift */,
-			);
-			path = MyPage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -496,26 +448,18 @@
 			files = (
 				70BF67CA2A76415000AFB25F /* MainTabStore.swift in Sources */,
 				70BF67CE2A7641A700AFB25F /* RootStore.swift in Sources */,
-				70BF67D92A76436900AFB25F /* MyPageView.swift in Sources */,
 				705333192A777D9700925CD9 /* NotificationCenter+Extension.swift in Sources */,
 				7053330F2A777B2300925CD9 /* WebMessageHandler.swift in Sources */,
 				70BF67BE2A75743000AFB25F /* Bundle+Extension.swift in Sources */,
 				70BF67C12A75767000AFB25F /* Url+Extension.swift in Sources */,
-				70BF67D72A76435F00AFB25F /* FeedView.swift in Sources */,
 				708F302C2A7A3EEC00152D0E /* AppDelegate.swift in Sources */,
 				70BF67CC2A76419900AFB25F /* RootView.swift in Sources */,
-				70BF67DB2A76436F00AFB25F /* QuestionView.swift in Sources */,
 				70A7FC2E2A83F63E0001854D /* URLSharingStore.swift in Sources */,
-				70BF67E12A76439A00AFB25F /* QuestionStore.swift in Sources */,
-				70BF67E52A7643A400AFB25F /* MyPageStore.swift in Sources */,
 				7000A8D32A70C6B800431275 /* RootApp.swift in Sources */,
 				70BF67C82A76412300AFB25F /* MainTabView.swift in Sources */,
 				7053331B2A77805200925CD9 /* WebMessageReceiveType.swift in Sources */,
 				7038E2D02A7D44690036756C /* WebPathType.swift in Sources */,
 				7038E2CE2A7D3C9B0036756C /* WebMessageSendType.swift in Sources */,
-				70BF67E32A76439E00AFB25F /* FeedStore.swift in Sources */,
-				7087F96F2A778A9400760EE3 /* ActivityViewController.swift in Sources */,
-				707058612A775CAD00B4F63F /* ContentController.swift in Sources */,
 				7038E2D32A7D46900036756C /* MainScene.swift in Sources */,
 				70A7FC302A83F83F0001854D /* URLSharingView.swift in Sources */,
 				7070585F2A764B9F00B4F63F /* WebView.swift in Sources */,

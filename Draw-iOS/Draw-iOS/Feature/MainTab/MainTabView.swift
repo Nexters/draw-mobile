@@ -57,12 +57,12 @@ struct MainTabView: View {
             .sheet(store: self.store.scope(state: \.$urlSharing, action: { .urlSharing($0) })) { store in
                 if #available(iOS 16.0, *) {
                     store.withState({
-                        ActivityViewController(url: $0.url)
+                        URLSharingView(url: $0.url)
                             .presentationDetents([.medium])
                     })
                 } else {
                     store.withState({
-                        ActivityViewController(url: $0.url)
+                        URLSharingView(url: $0.url)
                     })
                 }
             }

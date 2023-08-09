@@ -17,12 +17,7 @@ struct MainTabViewStore: ReducerProtocol {
         var currentScene: MainScene = .onboarding
         
         var isShowTabBar: Bool = false
-        var isShareSheetPresented: Bool = false
         var shareUrl: String?
-        
-        var feed: FeedStore.State = .init()
-        var question: QuestionStore.State = .init()
-        var myPage: MyPageStore.State = .init()
     }
     
     enum Action: BindableAction, Equatable {
@@ -36,10 +31,6 @@ struct MainTabViewStore: ReducerProtocol {
         case shareURL(url: URL)
         
         case setShareSheet(isPresented: Bool)
-        
-        case feed(FeedStore.Action)
-        case question(QuestionStore.Action)
-        case myPage(MyPageStore.Action)
     }
     
     public var body: some ReducerProtocol<State, Action> {
@@ -62,18 +53,6 @@ struct MainTabViewStore: ReducerProtocol {
                 
             default: return .none
             }
-        }
-        
-        Scope(state: \.feed, action: /Action.feed) {
-            FeedStore()._printChanges()
-        }
-        
-        Scope(state: \.question, action: /Action.question) {
-            QuestionStore()._printChanges()
-        }
-        
-        Scope(state: \.myPage, action: /Action.myPage) {
-            MyPageStore()._printChanges()
         }
         
         .ifLet(\.$urlSharing, action: /Action.urlSharing) {
