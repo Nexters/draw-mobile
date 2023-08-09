@@ -20,21 +20,25 @@ struct WebView: UIViewRepresentable {
         }
     }
     
-    func send(type: WebMessageSendType, completionHandler: @escaping (Any?, Error?) -> Void) {
-        webView.evaluateJavaScript(type.jsCode) {
-            completionHandler($0, $1)
-        }
-    }
-    
     func makeUIView(context: Context) -> WKWebView {
         let request = URLRequest(url: url)
         webView.load(request)
         
         webView.isOpaque = false
         webView.backgroundColor = .clear
-//        webView.scrollView.isScrollEnabled = false
         
         return webView
+    }
+    
+    func update(url: URL) {
+        let request = URLRequest(url: url)
+        webView.load(request)
+    }
+    
+    func send(type: WebMessageSendType, completionHandler: @escaping (Any?, Error?) -> Void) {
+        webView.evaluateJavaScript(type.jsCode) {
+            completionHandler($0, $1)
+        }
     }
     
     func updateUIView(_ webView: WKWebView, context: Context) {

@@ -43,6 +43,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let components = NSURLComponents(url: incomingURL, resolvingAgainstBaseURL: true) else {
             return false
         }
+        
+        print("incomingURL = \(incomingURL)")
+        print("components = \(components)")
 
         // Check for specific URL components that you need.
         guard let path = components.path,
