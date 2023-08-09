@@ -12,10 +12,13 @@ import ComposableArchitecture
 struct MainTabViewStore: ReducerProtocol {
 
     struct State: Equatable {
+        @PresentationState var urlSharing: URLSharingStore.State?
+        
         var currentScene: MainScene = .onboarding
         
         var isShowTabBar: Bool = false
         var isShareSheetPresented: Bool = false
+        var shareUrl: String?
         
         var feed: FeedStore.State = .init()
         var question: QuestionStore.State = .init()
@@ -25,8 +28,13 @@ struct MainTabViewStore: ReducerProtocol {
     enum Action: BindableAction, Equatable {
         case binding(BindingAction<State>)
         
+        case urlSharing(PresentationAction<URLSharingStore.Action>)
+        
         case selectTab(MainScene)
         case showTabBar(Bool)
+        
+        case shareURL(url: URL)
+        
         case setShareSheet(isPresented: Bool)
         
         case feed(FeedStore.Action)
@@ -48,6 +56,10 @@ struct MainTabViewStore: ReducerProtocol {
                 state.isShowTabBar = isShow
                 return .none
                 
+            case let .shareURL(url):
+                state.urlSharing = .init(url: url)
+                return .none
+                
             default: return .none
             }
         }
@@ -62,6 +74,10 @@ struct MainTabViewStore: ReducerProtocol {
         
         Scope(state: \.myPage, action: /Action.myPage) {
             MyPageStore()._printChanges()
+        }
+        
+        .ifLet(\.$urlSharing, action: /Action.urlSharing) {
+            URLSharingStore()
         }
     }
 }

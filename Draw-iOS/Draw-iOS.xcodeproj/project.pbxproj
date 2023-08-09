@@ -25,6 +25,8 @@
 		708F302C2A7A3EEC00152D0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708F302B2A7A3EEC00152D0E /* AppDelegate.swift */; };
 		708F302F2A7A40C700152D0E /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 708F302E2A7A40C700152D0E /* FirebaseMessaging */; };
 		708F30312A7A439000152D0E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 708F30302A7A439000152D0E /* GoogleService-Info.plist */; };
+		70A7FC2E2A83F63E0001854D /* URLSharingStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A7FC2D2A83F63E0001854D /* URLSharingStore.swift */; };
+		70A7FC302A83F83F0001854D /* URLSharingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A7FC2F2A83F83F0001854D /* URLSharingView.swift */; };
 		70BF67BE2A75743000AFB25F /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BF67BD2A75743000AFB25F /* Bundle+Extension.swift */; };
 		70BF67C12A75767000AFB25F /* Url+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BF67C02A75767000AFB25F /* Url+Extension.swift */; };
 		70BF67C42A7640A200AFB25F /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 70BF67C32A7640A200AFB25F /* ComposableArchitecture */; };
@@ -78,6 +80,8 @@
 		7087F96E2A778A9400760EE3 /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		708F302B2A7A3EEC00152D0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		708F30302A7A439000152D0E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		70A7FC2D2A83F63E0001854D /* URLSharingStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSharingStore.swift; sourceTree = "<group>"; };
+		70A7FC2F2A83F83F0001854D /* URLSharingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSharingView.swift; sourceTree = "<group>"; };
 		70B30AE02A7A4C2A002C380D /* Draw-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Draw-iOS.entitlements"; sourceTree = "<group>"; };
 		70BF67BA2A75732D00AFB25F /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		70BF67BB2A75733A00AFB25F /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
@@ -279,9 +283,18 @@
 		7087F96D2A778A7200760EE3 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				7087F96E2A778A9400760EE3 /* ActivityViewController.swift */,
 			);
 			path = UIKit;
+			sourceTree = "<group>";
+		};
+		70A7FC2C2A83F6110001854D /* ShareBottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				7087F96E2A778A9400760EE3 /* ActivityViewController.swift */,
+				70A7FC2D2A83F63E0001854D /* URLSharingStore.swift */,
+				70A7FC2F2A83F83F0001854D /* URLSharingView.swift */,
+			);
+			path = ShareBottomSheet;
 			sourceTree = "<group>";
 		};
 		70BF67BC2A7573DF00AFB25F /* Config */ = {
@@ -296,6 +309,7 @@
 		70BF67C52A76410300AFB25F /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				70A7FC2C2A83F6110001854D /* ShareBottomSheet */,
 				70BF67C62A76411A00AFB25F /* MainTab */,
 				70BF67D12A76434400AFB25F /* MyPage */,
 				70BF67CF2A76433C00AFB25F /* Feed */,
@@ -491,6 +505,7 @@
 				708F302C2A7A3EEC00152D0E /* AppDelegate.swift in Sources */,
 				70BF67CC2A76419900AFB25F /* RootView.swift in Sources */,
 				70BF67DB2A76436F00AFB25F /* QuestionView.swift in Sources */,
+				70A7FC2E2A83F63E0001854D /* URLSharingStore.swift in Sources */,
 				70BF67E12A76439A00AFB25F /* QuestionStore.swift in Sources */,
 				70BF67E52A7643A400AFB25F /* MyPageStore.swift in Sources */,
 				7000A8D32A70C6B800431275 /* RootApp.swift in Sources */,
@@ -502,6 +517,7 @@
 				7087F96F2A778A9400760EE3 /* ActivityViewController.swift in Sources */,
 				707058612A775CAD00B4F63F /* ContentController.swift in Sources */,
 				7038E2D32A7D46900036756C /* MainScene.swift in Sources */,
+				70A7FC302A83F83F0001854D /* URLSharingView.swift in Sources */,
 				7070585F2A764B9F00B4F63F /* WebView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
