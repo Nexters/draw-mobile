@@ -12,26 +12,25 @@ import ComposableArchitecture
 struct MainTabViewStore: ReducerProtocol {
 
     struct State: Equatable {
+        @PresentationState var urlSharing: URLSharingStore.State?
+        
         var currentScene: MainScene = .onboarding
         
         var isShowTabBar: Bool = false
-        var isShareSheetPresented: Bool = false
-        
-        var feed: FeedStore.State = .init()
-        var question: QuestionStore.State = .init()
-        var myPage: MyPageStore.State = .init()
+        var shareUrl: String?
     }
     
     enum Action: BindableAction, Equatable {
         case binding(BindingAction<State>)
         
+        case urlSharing(PresentationAction<URLSharingStore.Action>)
+        
         case selectTab(MainScene)
         case showTabBar(Bool)
-        case setShareSheet(isPresented: Bool)
         
-        case feed(FeedStore.Action)
-        case question(QuestionStore.Action)
-        case myPage(MyPageStore.Action)
+        case shareURL(url: URL)
+        
+        case setShareSheet(isPresented: Bool)
     }
     
     public var body: some ReducerProtocol<State, Action> {
@@ -48,20 +47,16 @@ struct MainTabViewStore: ReducerProtocol {
                 state.isShowTabBar = isShow
                 return .none
                 
+            case let .shareURL(url):
+                state.urlSharing = .init(url: url)
+                return .none
+                
             default: return .none
             }
         }
         
-        Scope(state: \.feed, action: /Action.feed) {
-            FeedStore()._printChanges()
-        }
-        
-        Scope(state: \.question, action: /Action.question) {
-            QuestionStore()._printChanges()
-        }
-        
-        Scope(state: \.myPage, action: /Action.myPage) {
-            MyPageStore()._printChanges()
+        .ifLet(\.$urlSharing, action: /Action.urlSharing) {
+            URLSharingStore()
         }
     }
 }

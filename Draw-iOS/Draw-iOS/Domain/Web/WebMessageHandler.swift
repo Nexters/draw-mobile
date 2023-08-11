@@ -15,12 +15,12 @@ class WebMessageHandler: NSObject, WKScriptMessageHandler {
         
         switch message.name {
         case WebMessageReceiveType.showBottomBar.rawValue:
-            guard let value = message.body as? String else { break }
-            NotificationCenterManager.send(.showBottomBar, value: value == "true")
+            guard let bool = message.body as? String else { break }
+            NotificationCenterManager.send(.showBottomBar, value: bool == "true")
             
         case WebMessageReceiveType.showShareSheet.rawValue:
-            guard let value = message.body as? String else { break }
-            NotificationCenterManager.send(.showShareSheet, value: value == "true")
+            guard let url = message.body as? String else { break }
+            NotificationCenterManager.send(.showShareSheet, value: url)
             
         default:
             break

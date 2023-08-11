@@ -1,14 +1,17 @@
 //
-//  QuestionStore.swift
+//  ShareStore.swift
 //  Draw-iOS
 //
-//  Created by 송영모 on 2023/07/30.
+//  Created by 송영모 on 2023/08/10.
 //
 
+import Foundation
 import ComposableArchitecture
 
-struct QuestionStore: ReducerProtocol {
-    struct State: Equatable { }
+struct URLSharingStore: ReducerProtocol {
+    struct State: Equatable {
+        let url: URL
+    }
     
     enum Action: Equatable {
         case tmp

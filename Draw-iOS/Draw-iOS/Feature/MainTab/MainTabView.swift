@@ -10,10 +10,13 @@ import SwiftUI
 import ComposableArchitecture
 
 struct MainTabView: View {
+    @Environment(\.openURL) private var openURL
+    
     let store: StoreOf<MainTabViewStore>
     
     let showBottomBarPublisher = NotificationCenter.default.publisher(for: .showBottomBar)
     let showShareSheetPublisher = NotificationCenter.default.publisher(for: .showShareSheet)
+    let openURLPublisher = NotificationCenter.default.publisher(for: .openURL)
     
     let webView = WebView(url: .feed)
     
@@ -41,17 +44,26 @@ struct MainTabView: View {
                     viewStore.send(.showTabBar(isShow))
                 }
             }
-            .sheet(
-              isPresented: viewStore.binding(
-                get: \.isShareSheetPresented,
-                send: MainTabViewStore.Action.setShareSheet(isPresented:)
-              )
-            ) {
+            .onReceive(showShareSheetPublisher) { value in
+                if let urlString = value.userInfo?[NotificationKey.showShareSheet] as? String, let url = URL(string: urlString) {
+                    viewStore.send(.shareURL(url: url))
+                }
+            }
+            .onReceive(openURLPublisher) { value in
+                if let urlString = value.userInfo?[NotificationKey.openURL] as? String, let url = URL(string: urlString) {
+                    webView.update(url: url)
+                }
+            }
+            .sheet(store: self.store.scope(state: \.$urlSharing, action: { .urlSharing($0) })) { store in
                 if #available(iOS 16.0, *) {
-                    ActivityViewController(url: .feedDetail)
-                        .presentationDetents([.medium])
+                    store.withState({
+                        URLSharingView(url: $0.url)
+                            .presentationDetents([.medium])
+                    })
                 } else {
-                    ActivityViewController(url: .feedDetail)
+                    store.withState({
+                        URLSharingView(url: $0.url)
+                    })
                 }
             }
             .background(Color("ColorBackgroundWhite"))

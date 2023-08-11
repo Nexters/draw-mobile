@@ -1,13 +1,15 @@
 //
-//  ActivityViewController.swift
+//  SharingView.swift
 //  Draw-iOS
 //
-//  Created by 송영모 on 2023/07/31.
+//  Created by 송영모 on 2023/08/10.
 //
 
 import SwiftUI
 
-struct ActivityViewController: UIViewControllerRepresentable {
+import ComposableArchitecture
+
+struct URLSharingView: UIViewControllerRepresentable {
     let url: URL
     
     func makeUIViewController(context: Context) -> UIActivityViewController {
