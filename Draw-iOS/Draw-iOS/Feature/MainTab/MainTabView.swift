@@ -17,7 +17,8 @@ struct MainTabView: View {
     let showBottomBarPublisher = NotificationCenter.default.publisher(for: .showBottomBar)
     let showShareSheetPublisher = NotificationCenter.default.publisher(for: .showShareSheet)
     let openURLPublisher = NotificationCenter.default.publisher(for: .openURL)
-    
+    let fcmTokenPublisher = NotificationCenter.default.publisher(for: .fcmToken)
+
     let webView = WebView(url: .feed)
     
     var body: some View {
@@ -56,6 +57,15 @@ struct MainTabView: View {
             .onReceive(openURLPublisher) { value in
                 if let urlString = value.userInfo?[NotificationKey.openURL] as? String, let url = URL(string: urlString) {
                     webView.update(url: url)
+                }
+            }
+            .onReceive(fcmTokenPublisher) { value in
+                if let token = value.userInfo?[NotificationKey.fcmToken] as? String {
+                    webView.send(type: .fcmToken(token)) { _, errorOrNil in
+                        if let error = errorOrNil {
+                            print(error)
+                        }
+                    }
                 }
             }
             .sheet(store: self.store.scope(state: \.$urlSharing, action: { .urlSharing($0) })) { store in
