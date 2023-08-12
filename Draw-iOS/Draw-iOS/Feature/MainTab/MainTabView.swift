@@ -30,7 +30,11 @@ struct MainTabView: View {
                 }
             }
             .onOpenURL { url in
-                webView.update(url: url)
+                if let urlString = url.valueOf("link"), let url = URL(string: urlString) {
+                    webView.update(url: url)
+                } else {
+                    webView.update(url: url)
+                }
             }
             .onChange(of: viewStore.currentScene) { scene in
                 webView.send(type: .navigate(scene)) { _, errorOrNil in
@@ -128,11 +132,5 @@ struct MainTabView: View {
             }
             .padding(.bottom, 24)
         }
-    }
-}
-
-struct MainTabView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainTabView(store: .init(initialState: .init(), reducer: MainTabViewStore()._printChanges()))
     }
 }

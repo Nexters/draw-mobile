@@ -14,4 +14,9 @@ extension URL {
     static let myPage: Self = URL(string: "\(Bundle.main.url)/my-page")!
     static let myPageSetting: Self = URL(string: "\(Bundle.main.url)/my-page/setting")!
     static let newQuestion: Self = URL(string: "\(Bundle.main.url)/new-question")!
+    
+    func valueOf(_ queryParameterName: String) -> String? {
+        guard let url = URLComponents(string: self.absoluteString) else { return nil }
+        return url.queryItems?.first(where: { $0.name == queryParameterName })?.value
+    }
 }

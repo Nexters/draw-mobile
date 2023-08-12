@@ -9,7 +9,7 @@ import Foundation
 
 import ComposableArchitecture
 
-struct RootStore: ReducerProtocol {
+struct RootStore: Reducer {
 
     enum State: Equatable {
         case mainTab(MainTabViewStore.State)
@@ -23,7 +23,7 @@ struct RootStore: ReducerProtocol {
         case mainTab(MainTabViewStore.Action)
     }
     
-    public var body: some ReducerProtocol<State, Action> {
+    public var body: some Reducer<State, Action> {
 
         Reduce { state, action in
             switch action {

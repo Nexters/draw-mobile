@@ -8,6 +8,7 @@
 	<array>
 		<string>applinks:draw-nexters.netlify.app</string>
 		<string>webcredentials:draw-nexters.netlify.app</string>
+		<string>applinks:drawyourcard.page.link</string>
 	</array>
 </dict>
 </plist>

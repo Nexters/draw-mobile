@@ -8,7 +8,7 @@
 import Foundation
 import ComposableArchitecture
 
-struct URLSharingStore: ReducerProtocol {
+struct URLSharingStore: Reducer {
     struct State: Equatable {
         let url: URL
     }
@@ -17,7 +17,7 @@ struct URLSharingStore: ReducerProtocol {
         case tmp
     }
     
-    var body: some ReducerProtocol<State, Action> {
+    var body: some Reducer<State, Action> {
         Reduce { state, action in
             switch action {
             case .tmp: return .none

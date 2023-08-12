@@ -9,7 +9,7 @@ import Foundation
 
 import ComposableArchitecture
 
-struct MainTabViewStore: ReducerProtocol {
+struct MainTabViewStore: Reducer {
 
     struct State: Equatable {
         @PresentationState var urlSharing: URLSharingStore.State?
@@ -33,7 +33,7 @@ struct MainTabViewStore: ReducerProtocol {
         case setShareSheet(isPresented: Bool)
     }
     
-    public var body: some ReducerProtocol<State, Action> {
+    public var body: some Reducer<State, Action> {
         BindingReducer()
         
         Reduce { state, action in
