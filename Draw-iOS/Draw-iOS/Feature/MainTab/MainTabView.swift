@@ -19,7 +19,7 @@ struct MainTabView: View {
     let openURLPublisher = NotificationCenter.default.publisher(for: .openURL)
     let fcmTokenPublisher = NotificationCenter.default.publisher(for: .fcmToken)
 
-    let webView = WebView(url: .feed)
+    let webView = WebView(url: .onboarding)
     
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
