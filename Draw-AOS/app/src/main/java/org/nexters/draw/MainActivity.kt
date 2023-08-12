@@ -1,5 +1,6 @@
 package org.nexters.draw
 
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.view.View
@@ -9,6 +10,8 @@ import android.webkit.WebViewClient
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import com.google.firebase.dynamiclinks.ktx.dynamicLinks
+import com.google.firebase.ktx.Firebase
 import org.nexters.draw.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -28,6 +31,7 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNavView.background = null
         initSplashView()
         checkDeepLink()
+        checkDynamicLink()
         initFabBtn()
         initNavigation()
         initBottomNavigation()
@@ -47,6 +51,24 @@ class MainActivity : AppCompatActivity() {
         } else {
             initWebView()
         }
+    }
+
+    private fun checkDynamicLink() {
+        Firebase.dynamicLinks.getDynamicLink(intent)
+            .addOnSuccessListener { pendingDynamicLink ->
+                var deepLink: Uri? = null
+                if (pendingDynamicLink != null) {
+                    deepLink = pendingDynamicLink.link
+                    binding.wbDraw.visibility = View.VISIBLE
+                    binding.wbDraw.apply {
+                        DrawWebViewClient.run {
+                            initWebView(this@apply)
+                            loadUrl(deepLink.toString())
+                        }
+                    }
+                }
+
+            }
     }
 
     private fun initSplashView() {
