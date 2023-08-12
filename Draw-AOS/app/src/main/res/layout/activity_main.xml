@@ -24,20 +24,11 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.core.widget.NestedScrollView
-            android:id="@+id/nestedScrollView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fillViewport="true"
-            android:scrollbars="vertical"
-            tools:ignore="MissingConstraints,WebViewLayout">
-
             <WebView
                 android:id="@+id/wb_draw"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:focusable="true" />
-        </androidx.core.widget.NestedScrollView>
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_nav_view"
