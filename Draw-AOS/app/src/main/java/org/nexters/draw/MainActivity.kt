@@ -27,10 +27,26 @@ class MainActivity : AppCompatActivity() {
 
         binding.bottomNavView.background = null
         initSplashView()
-        initWebView()
+        checkDeepLink()
         initFabBtn()
         initNavigation()
         initBottomNavigation()
+    }
+
+    private fun checkDeepLink() {
+        val data = intent.data
+
+        if (data != null) {
+            binding.wbDraw.visibility = View.VISIBLE
+            binding.wbDraw.apply {
+                DrawWebViewClient.run {
+                    initWebView(this@apply)
+                    loadUrl(intent.dataString!!)
+                }
+            }
+        } else {
+            initWebView()
+        }
     }
 
     private fun initSplashView() {
