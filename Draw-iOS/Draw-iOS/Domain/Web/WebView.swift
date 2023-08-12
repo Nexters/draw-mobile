@@ -22,11 +22,12 @@ struct WebView: UIViewRepresentable {
     
     func makeUIView(context: Context) -> WKWebView {
         let request = URLRequest(url: url)
+        webView.customUserAgent = "DRAW_WEBVIEW"
         webView.load(request)
         
         webView.isOpaque = false
         webView.backgroundColor = .clear
-        
+
         return webView
     }
     
