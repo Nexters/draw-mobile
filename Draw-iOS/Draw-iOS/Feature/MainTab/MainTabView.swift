@@ -17,8 +17,9 @@ struct MainTabView: View {
     let showBottomBarPublisher = NotificationCenter.default.publisher(for: .showBottomBar)
     let showShareSheetPublisher = NotificationCenter.default.publisher(for: .showShareSheet)
     let openURLPublisher = NotificationCenter.default.publisher(for: .openURL)
-    
-    let webView = WebView(url: .feed)
+    let fcmTokenPublisher = NotificationCenter.default.publisher(for: .fcmToken)
+
+    let webView = WebView(url: .onboarding)
     
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
@@ -30,7 +31,11 @@ struct MainTabView: View {
                 }
             }
             .onOpenURL { url in
-                webView.update(url: url)
+                if let urlString = url.valueOf("link"), let url = URL(string: urlString) {
+                    webView.update(url: url)
+                } else {
+                    webView.update(url: url)
+                }
             }
             .onChange(of: viewStore.currentScene) { scene in
                 webView.send(type: .navigate(scene)) { _, errorOrNil in
@@ -52,6 +57,15 @@ struct MainTabView: View {
             .onReceive(openURLPublisher) { value in
                 if let urlString = value.userInfo?[NotificationKey.openURL] as? String, let url = URL(string: urlString) {
                     webView.update(url: url)
+                }
+            }
+            .onReceive(fcmTokenPublisher) { value in
+                if let token = value.userInfo?[NotificationKey.fcmToken] as? String {
+                    webView.send(type: .fcmToken(token)) { _, errorOrNil in
+                        if let error = errorOrNil {
+                            print(error)
+                        }
+                    }
                 }
             }
             .sheet(store: self.store.scope(state: \.$urlSharing, action: { .urlSharing($0) })) { store in
@@ -128,11 +142,5 @@ struct MainTabView: View {
             }
             .padding(.bottom, 24)
         }
-    }
-}
-
-struct MainTabView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainTabView(store: .init(initialState: .init(), reducer: MainTabViewStore()._printChanges()))
     }
 }

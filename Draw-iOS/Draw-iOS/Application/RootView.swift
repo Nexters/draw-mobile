@@ -14,15 +14,12 @@ struct RootView: View {
     
     var body: some View {
         SwitchStore(self.store) {
-            CaseLet(/RootStore.State.mainTab, action: RootStore.Action.mainTab) {
-                MainTabView(store: $0)
+            switch $0 {
+            case .mainTab:
+                CaseLet(/RootStore.State.mainTab, action: RootStore.Action.mainTab) {
+                    MainTabView(store: $0)
+                }
             }
         }
-    }
-}
-
-struct RootView_Previews: PreviewProvider {
-    static var previews: some View {
-        RootView(store: .init(initialState: .init(), reducer: RootStore()._printChanges()))
     }
 }

@@ -7,13 +7,17 @@
 
 import SwiftUI
 
+import ComposableArchitecture
+
 @main
 struct RootApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     var body: some Scene {
         WindowGroup {
-            RootView(store: .init(initialState: .mainTab(.init()), reducer: RootStore()._printChanges()))
+            RootView(store: Store(initialState: RootStore.State()) {
+                RootStore()._printChanges()
+            })
         }
     }
 }

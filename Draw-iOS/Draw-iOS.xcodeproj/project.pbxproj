@@ -21,13 +21,14 @@
 		7053331B2A77805200925CD9 /* WebMessageReceiveType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7053331A2A77805200925CD9 /* WebMessageReceiveType.swift */; };
 		7070585F2A764B9F00B4F63F /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7070585E2A764B9F00B4F63F /* WebView.swift */; };
 		708F302C2A7A3EEC00152D0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708F302B2A7A3EEC00152D0E /* AppDelegate.swift */; };
-		708F302F2A7A40C700152D0E /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 708F302E2A7A40C700152D0E /* FirebaseMessaging */; };
 		708F30312A7A439000152D0E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 708F30302A7A439000152D0E /* GoogleService-Info.plist */; };
 		70A7FC2E2A83F63E0001854D /* URLSharingStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A7FC2D2A83F63E0001854D /* URLSharingStore.swift */; };
 		70A7FC302A83F83F0001854D /* URLSharingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A7FC2F2A83F83F0001854D /* URLSharingView.swift */; };
+		70B450FB2A87ABA600C5D64A /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 70B450FA2A87ABA600C5D64A /* ComposableArchitecture */; };
+		70B450FE2A87ACC300C5D64A /* FirebaseDynamicLinks in Frameworks */ = {isa = PBXBuildFile; productRef = 70B450FD2A87ACC300C5D64A /* FirebaseDynamicLinks */; };
+		70B451002A87ACC300C5D64A /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 70B450FF2A87ACC300C5D64A /* FirebaseMessaging */; };
 		70BF67BE2A75743000AFB25F /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BF67BD2A75743000AFB25F /* Bundle+Extension.swift */; };
 		70BF67C12A75767000AFB25F /* Url+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BF67C02A75767000AFB25F /* Url+Extension.swift */; };
-		70BF67C42A7640A200AFB25F /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 70BF67C32A7640A200AFB25F /* ComposableArchitecture */; };
 		70BF67C82A76412300AFB25F /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BF67C72A76412300AFB25F /* MainTabView.swift */; };
 		70BF67CA2A76415000AFB25F /* MainTabStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BF67C92A76415000AFB25F /* MainTabStore.swift */; };
 		70BF67CC2A76419900AFB25F /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BF67CB2A76419900AFB25F /* RootView.swift */; };
@@ -89,8 +90,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				708F302F2A7A40C700152D0E /* FirebaseMessaging in Frameworks */,
-				70BF67C42A7640A200AFB25F /* ComposableArchitecture in Frameworks */,
+				70B451002A87ACC300C5D64A /* FirebaseMessaging in Frameworks */,
+				70B450FB2A87ABA600C5D64A /* ComposableArchitecture in Frameworks */,
+				70B450FE2A87ACC300C5D64A /* FirebaseDynamicLinks in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,7 +240,6 @@
 		705333132A777C2A00925CD9 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				7087F96D2A778A7200760EE3 /* UIKit */,
 				705333172A777C8F00925CD9 /* NotificationCenter */,
 			);
 			path = Core;
@@ -262,13 +263,6 @@
 				705333182A777D9700925CD9 /* NotificationCenter+Extension.swift */,
 			);
 			path = NotificationCenter;
-			sourceTree = "<group>";
-		};
-		7087F96D2A778A7200760EE3 /* UIKit */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UIKit;
 			sourceTree = "<group>";
 		};
 		70A7FC2C2A83F6110001854D /* ShareBottomSheet */ = {
@@ -324,8 +318,9 @@
 			);
 			name = "Draw-iOS";
 			packageProductDependencies = (
-				70BF67C32A7640A200AFB25F /* ComposableArchitecture */,
-				708F302E2A7A40C700152D0E /* FirebaseMessaging */,
+				70B450FA2A87ABA600C5D64A /* ComposableArchitecture */,
+				70B450FD2A87ACC300C5D64A /* FirebaseDynamicLinks */,
+				70B450FF2A87ACC300C5D64A /* FirebaseMessaging */,
 			);
 			productName = "Draw-iOS";
 			productReference = 7000A8CF2A70C6B800431275 /* Draw-iOS.app */;
@@ -400,8 +395,8 @@
 			);
 			mainGroup = 7000A8C62A70C6B800431275;
 			packageReferences = (
-				70BF67C22A7640A200AFB25F /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
-				708F302D2A7A40C700152D0E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				70B450F92A87ABA600C5D64A /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				70B450FC2A87ACC300C5D64A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 7000A8D02A70C6B800431275 /* Products */;
 			projectDirPath = "";
@@ -629,11 +624,12 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Draw-iOS/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "드로우";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -665,11 +661,12 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Draw-iOS/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "드로우";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -809,7 +806,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		708F302D2A7A40C700152D0E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+		70B450F92A87ABA600C5D64A /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		70B450FC2A87ACC300C5D64A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
 			requirement = {
@@ -817,26 +822,23 @@
 				minimumVersion = 10.0.0;
 			};
 		};
-		70BF67C22A7640A200AFB25F /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.57.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		708F302E2A7A40C700152D0E /* FirebaseMessaging */ = {
+		70B450FA2A87ABA600C5D64A /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 708F302D2A7A40C700152D0E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseMessaging;
-		};
-		70BF67C32A7640A200AFB25F /* ComposableArchitecture */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 70BF67C22A7640A200AFB25F /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			package = 70B450F92A87ABA600C5D64A /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
+		};
+		70B450FD2A87ACC300C5D64A /* FirebaseDynamicLinks */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 70B450FC2A87ACC300C5D64A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDynamicLinks;
+		};
+		70B450FF2A87ACC300C5D64A /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 70B450FC2A87ACC300C5D64A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
