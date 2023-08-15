@@ -16,12 +16,8 @@ object DrawWebViewClient {
             settings.javaScriptEnabled = true
             settings.domStorageEnabled = true
             settings.setSupportMultipleWindows(true)
+            settings.userAgentString = "DRAW_WEBVIEW"
         }
-    }
-
-    @SuppressLint("SetJavaScriptEnabled")
-    fun loadWebUrl(webView: WebView, url: String) {
-        webView.loadUrl(url)
     }
 
 }
