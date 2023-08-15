@@ -3,6 +3,7 @@ package org.nexters.draw
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.ViewTreeObserver
 import android.webkit.WebView
@@ -10,8 +11,10 @@ import android.webkit.WebViewClient
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.dynamiclinks.ktx.dynamicLinks
 import com.google.firebase.ktx.Firebase
+import com.google.firebase.messaging.FirebaseMessaging
 import org.nexters.draw.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -27,8 +30,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         binding.bottomNavView.background = null
+        setFcmToken()
         initSplashView()
         checkDeepLink()
         checkDynamicLink()
@@ -39,7 +42,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun checkDeepLink() {
         val data = intent.data
-
         if (data != null) {
             binding.wbDraw.visibility = View.VISIBLE
             binding.wbDraw.apply {
@@ -56,7 +58,7 @@ class MainActivity : AppCompatActivity() {
     private fun checkDynamicLink() {
         Firebase.dynamicLinks.getDynamicLink(intent)
             .addOnSuccessListener { pendingDynamicLink ->
-                var deepLink: Uri? = null
+                val deepLink: Uri?
                 if (pendingDynamicLink != null) {
                     deepLink = pendingDynamicLink.link
                     binding.wbDraw.visibility = View.VISIBLE
@@ -108,6 +110,23 @@ class MainActivity : AppCompatActivity() {
 
         }
     }
+
+
+    private fun setFcmToken() {
+        FirebaseMessaging.getInstance().token.addOnCompleteListener(OnCompleteListener { task ->
+            if (!task.isSuccessful) {
+                return@OnCompleteListener
+            }
+            Log.d("TAG", "setFcmToken: ${task.result}")
+            binding.wbDraw.evaluateJavascript(
+                "var updateFcmEvent = new CustomEvent('updateFcm', { detail: { value: '${task.result})' }}); window.dispatchEvent(updateFcmEvent);",
+                null
+            )
+
+        })
+
+    }
+
 
     private fun initWebView() {
         binding.wbDraw.apply {
@@ -181,6 +200,12 @@ class MainActivity : AppCompatActivity() {
             || binding.wbDraw.url.equals(BuildConfig.WEB_URL_MY_PAGE, ignoreCase = true)
         ) {
             super.onBackPressed()
+        } else if (binding.wbDraw.url?.startsWith(
+                BuildConfig.WEB_URL_FEED_DETAIL,
+                ignoreCase = true
+            ) == true
+        ) {
+            initWebView()
         } else if (binding.wbDraw.canGoBack()) {
             binding.wbDraw.goBack()
         } else {
