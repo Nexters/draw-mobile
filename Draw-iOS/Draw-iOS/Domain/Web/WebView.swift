@@ -23,10 +23,15 @@ struct WebView: UIViewRepresentable {
     func makeUIView(context: Context) -> WKWebView {
         let request = URLRequest(url: url)
         webView.customUserAgent = "DRAW_WEBVIEW"
-        webView.load(request)
+        
+        if #available(iOS 16.4, *) {
+            self.webView.isInspectable = true
+        }
         
         webView.isOpaque = false
         webView.backgroundColor = .clear
+        
+        webView.load(request)
 
         return webView
     }
