@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
         android:allowBackup="true"
@@ -38,6 +40,9 @@
                     android:host="drawyourcard.site"
                     android:pathPrefix="/question-detail"
                     android:scheme="https" />
+                <data
+                    android:host="drawyourcard.page.link"
+                    android:scheme="https"/>
             </intent-filter>
 
             <meta-data
@@ -52,7 +57,9 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_draw" />
 
     </application>
     <queries>

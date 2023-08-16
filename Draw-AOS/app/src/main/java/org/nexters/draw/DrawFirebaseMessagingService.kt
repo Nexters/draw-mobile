@@ -20,14 +20,16 @@ class DrawFirebaseMessagingService : FirebaseMessagingService() {
     }
 
 
-    override fun onMessageReceived(message: RemoteMessage) {
-        super.onMessageReceived(message)
+    override fun onMessageReceived(remoteMessage: RemoteMessage) {
+        super.onMessageReceived(remoteMessage)
 
-        if (message.data.isNotEmpty()) {
-
-            sendNotification(message)
+        if (remoteMessage.notification !=null) { //포그라운드
+            sendNotification(remoteMessage)
         }
+        else if (remoteMessage.data.isNotEmpty()) { //백그라운드
+            sendNotification(remoteMessage)
 
+        }
 
     }
 
@@ -37,11 +39,9 @@ class DrawFirebaseMessagingService : FirebaseMessagingService() {
         val notificationManager =
             getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val channel =
-                NotificationChannel(channelId, "Notice", NotificationManager.IMPORTANCE_DEFAULT)
-            notificationManager.createNotificationChannel(channel)
-        }
+        val channel =
+            NotificationChannel(channelId, "Notice", NotificationManager.IMPORTANCE_DEFAULT)
+        notificationManager.createNotificationChannel(channel)
 
         // RequestCode, Id를 고유값으로 지정하여 알림이 개별 표시
         val uniId: Int = (System.currentTimeMillis() / 7).toInt()
@@ -50,7 +50,6 @@ class DrawFirebaseMessagingService : FirebaseMessagingService() {
         val resultIntent = Intent(this, MainActivity::class.java)
         resultIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         resultIntent.putExtra("url", remoteMessage.data["url"].toString())
-
         val requestCode = System.currentTimeMillis().toInt()
         val pendingIntent = PendingIntent.getActivity(
             this, requestCode, resultIntent, PendingIntent.FLAG_IMMUTABLE
@@ -58,7 +57,8 @@ class DrawFirebaseMessagingService : FirebaseMessagingService() {
 
 
         val notificationBuilder = NotificationCompat.Builder(this, channelId)
-            .setSmallIcon(R.drawable.ic_draw)
+            .setPriority(NotificationCompat.PRIORITY_HIGH)
+            .setSmallIcon(R.mipmap.ic_draw)
             .setContentTitle(remoteMessage.data["title"].toString())
             .setContentText(remoteMessage.data["body"].toString())
             .setAutoCancel(true)

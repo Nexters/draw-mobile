@@ -31,7 +31,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.bottomNavView.background = null
-        setFcmToken()
         initSplashView()
         checkDeepLink()
         checkDynamicLink()
@@ -43,15 +42,13 @@ class MainActivity : AppCompatActivity() {
     private fun checkDeepLink() {
         val data = intent.data
         if (data != null) {
-            binding.wbDraw.visibility = View.VISIBLE
-            binding.wbDraw.apply {
-                DrawWebViewClient.run {
-                    initWebView(this@apply)
-                    loadUrl(intent.dataString!!)
-                }
-            }
+            binding.wbDraw.loadUrl(intent.dataString!!)
         } else {
             initWebView()
+        }
+        if (intent.getStringExtra("url") != null) {
+            binding.wbDraw.loadUrl(intent.getStringExtra("url").toString())
+
         }
     }
 
@@ -61,6 +58,8 @@ class MainActivity : AppCompatActivity() {
                 val deepLink: Uri?
                 if (pendingDynamicLink != null) {
                     deepLink = pendingDynamicLink.link
+                    Log.d("TAG", "checkDynamicLink: ${deepLink.toString()}")
+
                     binding.wbDraw.visibility = View.VISIBLE
                     binding.wbDraw.apply {
                         DrawWebViewClient.run {
@@ -117,11 +116,10 @@ class MainActivity : AppCompatActivity() {
             if (!task.isSuccessful) {
                 return@OnCompleteListener
             }
-            Log.d("TAG", "setFcmToken: ${task.result}")
-            binding.wbDraw.evaluateJavascript(
-                "var updateFcmEvent = new CustomEvent('updateFcm', { detail: { value: '${task.result})' }}); window.dispatchEvent(updateFcmEvent);",
-                null
-            )
+            binding.wbDraw.loadUrl(
+                "javascript:var updateFcmEvent = new CustomEvent('updateFcm', { detail: { value: '${task.result}' }}); window.dispatchEvent(updateFcmEvent);",
+
+                )
 
         })
 
@@ -150,6 +148,7 @@ class MainActivity : AppCompatActivity() {
                 "draw"
             )
         }
+        setFcmToken()
     }
 
 
