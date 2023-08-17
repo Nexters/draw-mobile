@@ -42,6 +42,7 @@ struct WebView: UIViewRepresentable {
     }
     
     func send(type: WebMessageSendType, completionHandler: @escaping (Any?, Error?) -> Void) {
+        print("will send \(type.jsCode)")
         webView.evaluateJavaScript(type.jsCode) {
             completionHandler($0, $1)
         }

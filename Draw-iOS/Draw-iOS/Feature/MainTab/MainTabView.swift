@@ -18,7 +18,7 @@ struct MainTabView: View {
     let showShareSheetPublisher = NotificationCenter.default.publisher(for: .showShareSheet)
     let openURLPublisher = NotificationCenter.default.publisher(for: .openURL)
     let fcmTokenPublisher = NotificationCenter.default.publisher(for: .fcmToken)
-
+    
     let webView = WebView(url: .onboarding)
     
     var body: some View {
