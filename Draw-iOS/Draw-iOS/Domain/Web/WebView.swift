@@ -8,12 +8,24 @@
 import SwiftUI
 import WebKit
 
+class WebViewDelegate: NSObject, WKNavigationDelegate {
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+            if let fcmToken = UserDefaultManager.get(.fcmToken) {
+                NotificationCenterManager.send(.fcmToken, value: fcmToken)
+            }
+        }
+    }
+}
+
 struct WebView: UIViewRepresentable {
     let webView: WKWebView = .init()
+    let webViewDelegate: WebViewDelegate = .init()
     let url: URL
     
     init(url: URL) {
         self.url = url
+        self.webView.navigationDelegate = webViewDelegate
         
         WebMessageReceiveType.allCases.forEach { webMessageType in
             self.webView.configuration.userContentController.add(WebMessageHandler(), name: webMessageType.rawValue)

@@ -104,8 +104,9 @@ struct MainTabView: View {
                     Button(action: {
                         viewStore.send(.selectTab(.feed))
                     }, label: {
-                        Image("ImgFeed")
+                        Image(viewStore.state.currentScene == .feed ? "ImgFeed" : "ImgFeedInactive")
                             .resizable()
+                            .foregroundColor(viewStore.state.currentScene == .feed ? Color("TextBlack") : Color("TextGrey2"))
                     })
                     .frame(width: 50, height: 50)
                     
@@ -119,7 +120,7 @@ struct MainTabView: View {
                     Button(action: {
                         viewStore.send(.selectTab(.myPage))
                     }, label: {
-                        Image("ImgMyPage")
+                        Image(viewStore.state.currentScene == .myPage ? "ImgMyPage" : "ImgMyPageInactive")
                             .resizable()
                     })
                     .frame(width: 50, height: 50)

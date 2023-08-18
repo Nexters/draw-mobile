@@ -57,19 +57,9 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 willPresent notification: UNNotification) async
     -> UNNotificationPresentationOptions {
-//        let userInfo = notification.request.content.userInfo
-//
-//        print(userInfo)
-//
-//        let content = UNMutableNotificationContent()
-//        content.title = "This is title"
-//        content.subtitle = "This is subtitle"
-//        content.body = "This is body"
-//        content.badge = 1
-//        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 3, repeats: false)
-//
-//        let request = UNNotificationRequest(identifier: "Sample Notification", content: content, trigger: trigger)
-//        center.add(request, withCompletionHandler: {_ in })
+        let userInfo = notification.request.content.userInfo
+
+        print(userInfo)
         
         return [.badge, .banner, .list, .sound]
     }
@@ -87,7 +77,7 @@ extension AppDelegate: MessagingDelegate {
         let dataDict:[String: String?] = ["token": fcmToken]
         NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict as [AnyHashable : Any])
         if let fcmToken = fcmToken {
-            NotificationCenterManager.send(.fcmToken, value: fcmToken)
+            UserDefaultManager.post(.fcmToken, value: fcmToken)
         }
     }
 }

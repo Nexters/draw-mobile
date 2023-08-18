@@ -27,6 +27,10 @@
 		70B450FB2A87ABA600C5D64A /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 70B450FA2A87ABA600C5D64A /* ComposableArchitecture */; };
 		70B450FE2A87ACC300C5D64A /* FirebaseDynamicLinks in Frameworks */ = {isa = PBXBuildFile; productRef = 70B450FD2A87ACC300C5D64A /* FirebaseDynamicLinks */; };
 		70B451002A87ACC300C5D64A /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 70B450FF2A87ACC300C5D64A /* FirebaseMessaging */; };
+		70BE21062A8FA05900FC9358 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BE21052A8FA05900FC9358 /* UserDefaultManager.swift */; };
+		70BE21082A8FA08E00FC9358 /* NotificationCenterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BE21072A8FA08E00FC9358 /* NotificationCenterManager.swift */; };
+		70BE210A2A8FA0B600FC9358 /* NotificationKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BE21092A8FA0B600FC9358 /* NotificationKey.swift */; };
+		70BE210C2A8FA0D200FC9358 /* UserDefaultKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BE210B2A8FA0D200FC9358 /* UserDefaultKey.swift */; };
 		70BF67BE2A75743000AFB25F /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BF67BD2A75743000AFB25F /* Bundle+Extension.swift */; };
 		70BF67C12A75767000AFB25F /* Url+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BF67C02A75767000AFB25F /* Url+Extension.swift */; };
 		70BF67C82A76412300AFB25F /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BF67C72A76412300AFB25F /* MainTabView.swift */; };
@@ -74,6 +78,10 @@
 		70A7FC2D2A83F63E0001854D /* URLSharingStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSharingStore.swift; sourceTree = "<group>"; };
 		70A7FC2F2A83F83F0001854D /* URLSharingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSharingView.swift; sourceTree = "<group>"; };
 		70B30AE02A7A4C2A002C380D /* Draw-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Draw-iOS.entitlements"; sourceTree = "<group>"; };
+		70BE21052A8FA05900FC9358 /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
+		70BE21072A8FA08E00FC9358 /* NotificationCenterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenterManager.swift; sourceTree = "<group>"; };
+		70BE21092A8FA0B600FC9358 /* NotificationKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationKey.swift; sourceTree = "<group>"; };
+		70BE210B2A8FA0D200FC9358 /* UserDefaultKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultKey.swift; sourceTree = "<group>"; };
 		70BF67BA2A75732D00AFB25F /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		70BF67BB2A75733A00AFB25F /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		70BF67BD2A75743000AFB25F /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
@@ -240,6 +248,7 @@
 		705333132A777C2A00925CD9 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				70BE21042A8FA02E00FC9358 /* UserDefault */,
 				705333172A777C8F00925CD9 /* NotificationCenter */,
 			);
 			path = Core;
@@ -261,6 +270,8 @@
 			isa = PBXGroup;
 			children = (
 				705333182A777D9700925CD9 /* NotificationCenter+Extension.swift */,
+				70BE21072A8FA08E00FC9358 /* NotificationCenterManager.swift */,
+				70BE21092A8FA0B600FC9358 /* NotificationKey.swift */,
 			);
 			path = NotificationCenter;
 			sourceTree = "<group>";
@@ -272,6 +283,15 @@
 				70A7FC2F2A83F83F0001854D /* URLSharingView.swift */,
 			);
 			path = ShareBottomSheet;
+			sourceTree = "<group>";
+		};
+		70BE21042A8FA02E00FC9358 /* UserDefault */ = {
+			isa = PBXGroup;
+			children = (
+				70BE21052A8FA05900FC9358 /* UserDefaultManager.swift */,
+				70BE210B2A8FA0D200FC9358 /* UserDefaultKey.swift */,
+			);
+			path = UserDefault;
 			sourceTree = "<group>";
 		};
 		70BF67BC2A7573DF00AFB25F /* Config */ = {
@@ -442,14 +462,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				70BF67CA2A76415000AFB25F /* MainTabStore.swift in Sources */,
+				70BE210C2A8FA0D200FC9358 /* UserDefaultKey.swift in Sources */,
 				70BF67CE2A7641A700AFB25F /* RootStore.swift in Sources */,
 				705333192A777D9700925CD9 /* NotificationCenter+Extension.swift in Sources */,
 				7053330F2A777B2300925CD9 /* WebMessageHandler.swift in Sources */,
+				70BE21082A8FA08E00FC9358 /* NotificationCenterManager.swift in Sources */,
 				70BF67BE2A75743000AFB25F /* Bundle+Extension.swift in Sources */,
 				70BF67C12A75767000AFB25F /* Url+Extension.swift in Sources */,
+				70BE21062A8FA05900FC9358 /* UserDefaultManager.swift in Sources */,
 				708F302C2A7A3EEC00152D0E /* AppDelegate.swift in Sources */,
 				70BF67CC2A76419900AFB25F /* RootView.swift in Sources */,
 				70A7FC2E2A83F63E0001854D /* URLSharingStore.swift in Sources */,
+				70BE210A2A8FA0B600FC9358 /* NotificationKey.swift in Sources */,
 				7000A8D32A70C6B800431275 /* RootApp.swift in Sources */,
 				70BF67C82A76412300AFB25F /* MainTabView.swift in Sources */,
 				7053331B2A77805200925CD9 /* WebMessageReceiveType.swift in Sources */,
