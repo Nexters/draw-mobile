@@ -18,7 +18,7 @@
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>kakaotalk</string>
-		<string>https://draw-nexters.netlify.app</string>
+		<string>https://drawyourcard.site</string>
 	</array>
 	<key>SERVER_HOST</key>
 	<string>$(SERVER_HOST)</string>

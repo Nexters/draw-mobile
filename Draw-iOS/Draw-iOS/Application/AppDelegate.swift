@@ -37,24 +37,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?,
                      annotation: Any) -> Bool {
-      return true
+        return true
     }
     
     func application(_ application: UIApplication, continue userActivity: NSUserActivity,
                      restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
-      return true
+        return true
     }
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         Messaging.messaging().apnsToken = deviceToken
     }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        print("did recevie \(userInfo)")
+    }
 }
 extension AppDelegate: UNUserNotificationCenterDelegate {
-    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        print("\(#function)")
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                willPresent notification: UNNotification) async
+    -> UNNotificationPresentationOptions {
+        let userInfo = notification.request.content.userInfo
+
+        print(userInfo)
+        
+        return [.badge, .banner, .list, .sound]
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse) async {
+        print("did receive \(response)")
         if let url = response.notification.request.content.userInfo["url"] as? String {
             NotificationCenterManager.send(.openURL, value: url)
         }
@@ -66,7 +77,7 @@ extension AppDelegate: MessagingDelegate {
         let dataDict:[String: String?] = ["token": fcmToken]
         NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict as [AnyHashable : Any])
         if let fcmToken = fcmToken {
-            NotificationCenterManager.send(.fcmToken, value: fcmToken)
+            UserDefaultManager.post(.fcmToken, value: fcmToken)
         }
     }
 }

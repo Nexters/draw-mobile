@@ -18,7 +18,7 @@ struct MainTabView: View {
     let showShareSheetPublisher = NotificationCenter.default.publisher(for: .showShareSheet)
     let openURLPublisher = NotificationCenter.default.publisher(for: .openURL)
     let fcmTokenPublisher = NotificationCenter.default.publisher(for: .fcmToken)
-
+    
     let webView = WebView(url: .onboarding)
     
     var body: some View {
@@ -104,8 +104,9 @@ struct MainTabView: View {
                     Button(action: {
                         viewStore.send(.selectTab(.feed))
                     }, label: {
-                        Image("ImgFeed")
+                        Image(viewStore.state.currentScene == .feed ? "ImgFeed" : "ImgFeedInactive")
                             .resizable()
+                            .foregroundColor(viewStore.state.currentScene == .feed ? Color("TextBlack") : Color("TextGrey2"))
                     })
                     .frame(width: 50, height: 50)
                     
@@ -119,7 +120,7 @@ struct MainTabView: View {
                     Button(action: {
                         viewStore.send(.selectTab(.myPage))
                     }, label: {
-                        Image("ImgMyPage")
+                        Image(viewStore.state.currentScene == .myPage ? "ImgMyPage" : "ImgMyPageInactive")
                             .resizable()
                     })
                     .frame(width: 50, height: 50)

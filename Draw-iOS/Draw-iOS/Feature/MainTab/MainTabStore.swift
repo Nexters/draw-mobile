@@ -14,7 +14,7 @@ struct MainTabViewStore: Reducer {
     struct State: Equatable {
         @PresentationState var urlSharing: URLSharingStore.State?
         
-        var currentScene: MainScene = .onboarding
+        var currentScene: MainScene = .feed
         
         var isShowTabBar: Bool = false
         var shareUrl: String?

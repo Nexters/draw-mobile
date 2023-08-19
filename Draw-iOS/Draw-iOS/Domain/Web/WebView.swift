@@ -8,12 +8,24 @@
 import SwiftUI
 import WebKit
 
+class WebViewDelegate: NSObject, WKNavigationDelegate {
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+            if let fcmToken = UserDefaultManager.get(.fcmToken) {
+                NotificationCenterManager.send(.fcmToken, value: fcmToken)
+            }
+        }
+    }
+}
+
 struct WebView: UIViewRepresentable {
     let webView: WKWebView = .init()
+    let webViewDelegate: WebViewDelegate = .init()
     let url: URL
     
     init(url: URL) {
         self.url = url
+        self.webView.navigationDelegate = webViewDelegate
         
         WebMessageReceiveType.allCases.forEach { webMessageType in
             self.webView.configuration.userContentController.add(WebMessageHandler(), name: webMessageType.rawValue)
@@ -23,10 +35,15 @@ struct WebView: UIViewRepresentable {
     func makeUIView(context: Context) -> WKWebView {
         let request = URLRequest(url: url)
         webView.customUserAgent = "DRAW_WEBVIEW"
-        webView.load(request)
+        
+        if #available(iOS 16.4, *) {
+            self.webView.isInspectable = true
+        }
         
         webView.isOpaque = false
         webView.backgroundColor = .clear
+        
+        webView.load(request)
 
         return webView
     }
@@ -37,6 +54,7 @@ struct WebView: UIViewRepresentable {
     }
     
     func send(type: WebMessageSendType, completionHandler: @escaping (Any?, Error?) -> Void) {
+        print("will send \(type.jsCode)")
         webView.evaluateJavaScript(type.jsCode) {
             completionHandler($0, $1)
         }
